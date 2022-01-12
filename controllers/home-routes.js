@@ -1,5 +1,5 @@
 // Constants 
-const sequelize = require('..config/connection');
+const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 
 const router = require('express').Router();
@@ -8,6 +8,8 @@ const router = require('express').Router();
 /** Render homepage and pass posts data to it.
 // TODO: We will need to add Best bad post, and best good answer
 */
+
+// POST  /   get all Posts
 router.get('/', (req, res) => {
     Post.findALL({
 
@@ -29,6 +31,7 @@ router.get('/', (req, res) => {
 
 });
 
+// Redirect to the login page
 router.get('/login', (req, res)=> {
     // if they are logged in redirect to a homepage if one exists.
     if (req.session.loggedIn) {
@@ -39,6 +42,7 @@ router.get('/login', (req, res)=> {
     res.render('login');
 });
 
+// Redirect to the Signup page
 router.get('/signup', (req, res)=> {
     // if they are logged in redirect to a homepage if one exists.
     if (req.session.loggedIn) {
@@ -48,9 +52,8 @@ router.get('/signup', (req, res)=> {
     // if not logged in, direct to signup page.
     res.render('signup');
 });
-/** Get a specific post by id
- * 
- */
+
+// GET /1      Get post by 1
 router.get('/post/:id', (req,res) => {
    
     Post.findOne({

@@ -6,6 +6,7 @@ const { Post, User, Comment } = require('../models');
 
 router.get('/', (req,res) => {
 
+    // GET /profile   Find all posts?  Not sure what we want on this page
     Post.findAll({
         // TODO: will need to adjust   add upvote and downvote
         where: {
@@ -15,7 +16,7 @@ router.get('/', (req,res) => {
         attributes: [
           'id',
           'title',
-          'created_at'//,
+          'created_at'
        
         ],
         include: [
