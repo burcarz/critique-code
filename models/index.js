@@ -1,7 +1,8 @@
 const User = require('./User')
 const Post = require('./Post')
-const UpVote = require('./Upvote')
-const DownVote = require('./Downvote')
+// const UpVote = require('./Upvote')
+// const DownVote = require('./Downvote')
+const Comment = require('./Comment')
 
 // create associations 
 
@@ -19,38 +20,38 @@ Post.belongsTo(User, {
 // User beings to post through Upvote and Downvote, so there will need to be two belongsToMany calls since we want to associate both with the user
 
 // association for upvotes
-User.belongsToMany(Post, {
+/*User.belongsToMany(Post, {
     through: UpVote,
     as: 'upvoted_posts',
     foreignKey: 'user_id'
 })
 
 // association for downvotes
-User.belongsToMany(Post, {
+/*User.belongsToMany(Post, {
     through: DownVote,
     as: 'downvoted_posts',
     foreignKey: 'user_id'
-})
+})*/
 
 
 // doing the same thing here that we did for User, just for posts
 
 // association for upvotes
-Post.belongsToMany(User, {
+/*Post.belongsToMany(User, {
     through: UpVote,
     as: 'upvoted_posts',
     foreignKey: 'user_id'
 })
 
 // association for downvotes
-Post.belongsToMany(User, {
+/*Post.belongsToMany(User, {
     through: DownVote,
     as: 'downvoted_posts',
     foreignKey: 'user_id'
-})
+})*/
 
 // associations for Upvotes
-UpVote.belongsTo(User, {
+/*UpVote.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
@@ -59,33 +60,33 @@ UpVote.belongsTo(Post, {
 })
 
 // same as upvote just switched the name to downvote
-DownVote.belongsTo(User, {
+/*DownVote.belongsTo(User, {
     foreignKey: 'user_id'
 })
 
 DownVote.belongsTo(Post, {
     foreignKey: 'post_id'
-})
+})*/
 
 
 // User has many upvotes and downvotes 
-User.hasMany(UpVote, {
+/*User.hasMany(UpVote, {
     foreignKey: 'user_id'
 })
 
-User.hasMany(DownVote, {
+/*User.hasMany(DownVote, {
     foreignKey: 'user_id'
-})
+})*/
 
 
 // Post can also have many upvotes and downvotes
-Post.hasMany(UpVote, {
+/*Post.hasMany(UpVote, {
     foreignKey: 'post_id'
 })
 
-Post.hasMany(DownVote, {
+/*Post.hasMany(DownVote, {
     foreignKey: 'post_id'
-})
+})*/
 
 
 // Comment belongs to user and post 
@@ -108,4 +109,4 @@ Post.hasMany(Comment, {
     foreignKey: 'post_id'
 })
 
-module.exports = { User, Post, UpVote, DownVote }
+module.exports = { User, Post, Comment } // add UpVote and DownVote later
