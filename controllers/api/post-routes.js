@@ -11,8 +11,9 @@ router.get('/', (req, res) => {
         //Query config
         attributes: [
           'id', 
+          'title',
+          'body',
           'post_url', 
-          'title', 
           'created_at'
         ],
         // We could use 
@@ -23,7 +24,7 @@ router.get('/', (req, res) => {
               model: Comment,
               attributes: [
                 'id', 
-                'comment_text',
+                'comment_body',
                 'post_id',
                 'user_id',
                 'created_at'
@@ -55,7 +56,7 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'post_url', 'title', 'created_at'],
+      attributes: ['id', 'title', 'body', 'post_url', 'created_at'],
       include: [
         {
           model: User,
@@ -65,7 +66,7 @@ router.get('/:id', (req, res) => {
       include: [
         {
         model: Comment,
-        attributes: ['id', 'comment_text']
+        attributes: ['id', 'comment_body']
         }
       ]
     })
@@ -88,6 +89,7 @@ router.get('/:id', (req, res) => {
     Post.create({
         // TODO: will need to be changed
       title: req.body.title,
+      body:req.body.body,
       post_url: req.body.post_url,
       user_id: req.body.user_id
     })
@@ -103,9 +105,12 @@ router.get('/:id', (req, res) => {
  
 // PUT /api/post/1       Update a post by ID
   router.put('/:id', (req, res) => {
+
+    // TODO: What do we want to edit? body? Title?
     Post.update(
       {
-        title: req.body.title
+        title: req.body.title,
+        body: req.body.body
       },
       {
         where: {

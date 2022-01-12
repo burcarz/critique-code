@@ -54,6 +54,7 @@ router.get('/signup', (req, res)=> {
 });
 
 // GET /1      Get post by 1
+// TODO: I don't need this I don't think
 router.get('/post/:id', (req,res) => {
    
     Post.findOne({
@@ -64,12 +65,14 @@ router.get('/post/:id', (req,res) => {
         attributes: [
             'id',
             'title',
+            'body',
+            'post_url',
             'created_at',
         ],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: User, 
                     attributes: ['username']

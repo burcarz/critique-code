@@ -42,6 +42,7 @@ router.post('/', (req, res) => {
     if(req.session) {
         Comment.create({
             post_id: req.body.post_id,
+            comment_title:req.body.comment_title,
             comment_text: req.body.comment_text,
             // Get the id from the session
             user_id: req.session.user_id
