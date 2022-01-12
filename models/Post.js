@@ -18,7 +18,7 @@ Post.init(
             allowNull: false
         },
 
-        body: { // body of the post (can contain code)
+        post_body: { // body of the post (can contain code)
             type: DataTypes.STRING,
             allowNull: false
         },
