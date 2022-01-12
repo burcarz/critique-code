@@ -1,7 +1,7 @@
 // Constants 
 const express = require('express');
 const routes = require('./controllers');
-const helpers = require('./utils/helpers');
+//const helpers = require('./utils/helpers');
 
 const path = require('path');
 
@@ -12,8 +12,9 @@ const path = require('path');
 require('dotenv').config();
 
 // Setup handlebars
-const hbs = exphbs.create({})
 const exphbs = require('express-handlebars');
+const hbs = exphbs.create({})
+
 
 
 // Setup express
