@@ -10,9 +10,10 @@ router.get('/', (req, res) => {
     Post.findAll({
         //Query config
         attributes: [
-          'id', 
+          'user_id', 
           'post_url', 
-          'title', 
+          'title',
+          'post_body', 
           'created_at'
         ],
         // We could use 
@@ -23,7 +24,7 @@ router.get('/', (req, res) => {
               model: Comment,
               attributes: [
                 'id', 
-                'comment_text',
+                'comment_body',
                 'post_id',
                 'user_id',
                 'created_at'
@@ -65,7 +66,7 @@ router.get('/:id', (req, res) => {
       include: [
         {
         model: Comment,
-        attributes: ['id', 'comment_text']
+        attributes: ['id', 'comment_body']
         }
       ]
     })
