@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS critique_db;
+
+CREATE DATABASE critique_db;
