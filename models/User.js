@@ -11,7 +11,7 @@ class User extends Model {
     }
 }
 
-// define table columns, configuration
+// define table columns, configuration for user model
 
 User.init(
     {
