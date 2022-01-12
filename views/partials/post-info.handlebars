@@ -1,0 +1,15 @@
+<section class="post">
+    <div class="title">
+        <a href="{{title}}" target="blank">{{title}}</a>
+        <span>Posted by: {{user.username}}</span>
+    </div>
+    <div class="body">
+        <p>{{post_body}}</p>
+        {{!-- <img src="{{post_body}}" /> --}}
+    </div>
+    <div class="info">
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+
+        {{vote_count}} votes
+    </div>
+</section>

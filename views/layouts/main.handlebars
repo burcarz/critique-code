@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Critique Code</title>
+        <link rel="stylesheet" href="/css/style.css">
+    </head>
+
+    <body>
+        <header class="h-title">
+            <h1  class="title">Critique<span id="h-span">Code</span></h1>
+            <nav>
+                <a href="/funny">FUNNY CODE</a>
+                <a href="/review">BAD CODE</a>
+                {{#if loggedIn}}
+                <a href="/profile">PROFILE</a>
+                {{else}}
+                <a href="/login">LOGIN</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{body}}}
+        </main>
+        <footer>
+            Test Development Build 0.1
+        </footer>
+    </body>
+</html>
