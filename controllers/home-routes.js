@@ -11,7 +11,7 @@ const router = require('express').Router();
 
 // POST  /   get all Posts
 router.get('/', (req, res) => {
-    Post.findALL({
+    Post.findAll({
 
     })
     .then(dbPostData => {
