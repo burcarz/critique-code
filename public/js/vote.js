@@ -1,15 +1,19 @@
+// DOESN'T WORK RIGHT NOW
+// Supposed to be a put request that vote by 1
 async function voteCLickHandler(event) {
     event.preventDefault();
 
-    const id = window.location.toString().split('/')[
+    const postId = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];
 
-    const response = await fetch('/api/posts/:id', {
+    const voteCount = document.getElementById('vote-val').innerHTML;
+    console.log(voteCount);
+    // console.log(postId);
+    const response = await fetch(`/api/posts/vote/${postId}`, {
         method: 'PUT',
         body: JSON.stringify({
-            post_id: id,
-            vote_count: 1++
+            vote_count: voteCount
         }),
         headers: {
             'Content-Type': 'application/json'

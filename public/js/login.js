@@ -25,28 +25,28 @@ async function signupFormHandler(event) {
 }
 
 // login form posts user info to our login route
-async function loginFormHandler(event) {
-    event.preventDefault();
+// async function loginFormHandler(event) {
+//     event.preventDefault();
 
-    const username = document.querySelector('#username-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
+//     const username = document.querySelector('#username-login').value.trim();
+//     const password = document.querySelector('#password-login').value.trim();
 
-    if (username && password) {
-        const response = await fetch('/api/users/login', {
-            method: 'POST',
-            body: JSON.stringify({
-                username,
-                password
-            }),
-            headers: { 'Content-Type': 'application/json' }
-        });
-        if (responses.ok) {
-            console.log('success');
-        } else {
-            console.log('failure to login')
-        }
-    }
-}
+//     if (username && password) {
+//         const response = await fetch('/api/users/login', {
+//             method: 'POST',
+//             body: JSON.stringify({
+//                 username,
+//                 password
+//             }),
+//             headers: { 'Content-Type': 'application/json' }
+//         });
+//         if (responses.ok) {
+//             console.log('success');
+//         } else {
+//             console.log('failure to login')
+//         }
+//     }
+// }
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+// document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
