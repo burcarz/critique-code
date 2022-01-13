@@ -11,7 +11,6 @@ const router = require('express').Router();
 
 // POST  /   get all Posts
 //router.get('/', (req, res) => {
-
    // res.render('homepage');
     // Post.findALL({
     //      //Query config
