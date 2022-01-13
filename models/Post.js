@@ -23,12 +23,12 @@ Post.init(
             allowNull: true
         },
 
-        post_url: { // post url, with validation
-            type: DataTypes.STRING,
-            validate: {
-                isUrl: true
-            }
+        vote_count: { // post url, with validation
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0
         },
+
         user_id: { // user id with reference to user model and key
             type: DataTypes.INTEGER,
             references: {
