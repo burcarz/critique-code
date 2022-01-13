@@ -56,7 +56,7 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'post_url', 'title', 'created_at'],
+      attributes: ['id', 'title', 'body', 'post_url', 'created_at'],
       include: [
         {
           model: User,
@@ -105,10 +105,13 @@ router.get('/:id', (req, res) => {
  
 // PUT /api/post/1       Update a post by ID
   router.put('/:id', (req, res) => {
+
+    // TODO: What do we want to edit? body? Title?
     Post.update(
       {
         title: req.body.title,
         post_url: req.body.post_url
+
       },
       {
         where: {

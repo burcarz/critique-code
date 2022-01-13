@@ -29,6 +29,7 @@ router.get('/:id', (req, res) => {
             attributes: [
               'id', 
               'title',
+              'body',
               'post_url',
               'created_at'
             ]
@@ -96,7 +97,9 @@ router.post('/login', (req, res) => {
  
   User.findOne({
     where: {
-      username: req.body.username
+        // TODO: do we want to do email or username for login?
+     // username: req.body.username
+      email: req.body.email
     }
   }).then(dbUserData => {
     if (!dbUserData) {
@@ -114,6 +117,8 @@ router.post('/login', (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
+      // save email too?
+      req.session.email = dbUserData.email;
       req.session.loggedIn = true;
   
       res.json({ user: dbUserData, message: 'You are now logged in!' });
@@ -141,6 +146,7 @@ router.post('/logout', (req, res)=> {
 // PUT /api/users/1  Update a user's info by id
 router.put('/:id', (req, res) => {
  
+    // TODO:   Do we want to be able to edit user info?
   // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
   User.update(req.body, {
     where: {
