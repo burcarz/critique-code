@@ -10,12 +10,12 @@ DownVote.init(
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false
+            allowNull: true
         },
 
         user_id: { // getting the user id, references user model
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'user',
                 key: 'id'
@@ -24,7 +24,7 @@ DownVote.init(
 
         post_id: { // getting post id, references post model 
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'post',
                 key: 'id'

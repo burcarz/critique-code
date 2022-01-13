@@ -8,13 +8,25 @@ const Comment = require('./Comment')
 
 // association for User and Post, relationship being that User has many Post
 User.hasMany(Post, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'cascade'
 })
 
 // association for Post and User, relationship being that Post belongs to User model
 Post.belongsTo(User, {
     foreignKey: 'user_id'
 })
+
+// User and Posts have many comments 
+
+User.hasMany(Comment, {
+    foreignKey: 'user_id'
+})
+
+Post.hasMany(Comment, {
+    foreignKey: 'post_id'
+})
+
 
 
 // User beings to post through Upvote and Downvote, so there will need to be two belongsToMany calls since we want to associate both with the user
@@ -91,22 +103,11 @@ DownVote.belongsTo(Post, {
 
 // Comment belongs to user and post 
 Comment.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 })
 
 Comment.belongsTo(Post, {
-    foreignKey: 'post_id'
-})
-
-
-// User and Posts have many comments 
-
-User.hasMany(Comment, {
-    foreignKey: 'user_id'
-})
-
-Post.hasMany(Comment, {
-    foreignKey: 'post_id'
+    foreignKey: 'post_id',
 })
 
 module.exports = { User, Post, Comment } // add UpVote and DownVote later
