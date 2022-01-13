@@ -11,8 +11,9 @@ router.get('/', (req,res) => {
         // TODO: I am not sure what data you want for this page? Right now it 
         // pulls your posts
         where: {
-          // use the ID from the session
-          user_id: req.session.user_id
+          // use the Tag to sort.
+          // TODO:  Is the model changed  yet?
+          post_tag: req.params.post_tag
         },
         attributes: [
           'id',
@@ -47,7 +48,7 @@ router.get('/', (req,res) => {
           // serialize data before passing to template
           const posts = dbPostData.map(post => post.get({ plain: true }));
 
-          res.render('profile', { posts, loggedIn: true });
+          res.render('advice', { posts, loggedIn: true });
   
         })
         .catch(err => {
