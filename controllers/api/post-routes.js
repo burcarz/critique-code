@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
         //Query config
         attributes: [
           'user_id', 
-          'post_url', 
+          'vote_count', 
           'title',
           'post_body', 
           'created_at'
@@ -129,6 +129,31 @@ router.get('/:id', (req, res) => {
       });
   });
 
+// TEST VOTE ROUTE  _____ CHANGES VOTE COUNT
+router.put('/vote/:id', (req, res) => {
+  Post.update(
+    {
+      vote_count: req.params.vote_count + 1
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+  .then(dbPostData => {
+    console.log(dbPostData);
+    if (!dbPostData) {
+      res.json(404).json({ message: 'No post found with this id' });
+      return;
+    }
+    res.json(dbPostData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
+})
 
 // DELETE /api/post/1      Delete a post by id
   router.delete('/:id', (req, res) => {

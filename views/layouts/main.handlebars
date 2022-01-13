@@ -9,22 +9,67 @@
 
     <body>
         <header class="h-title">
+            <a href="/">
             <h1  class="title">Critique<span id="h-span">Code</span></h1>
+            </a>
             <nav>
                 <a href="/funny">FUNNY CODE</a>
-                <a href="/review">BAD CODE</a>
-                {{#if loggedIn}}
+                <a href="/advice">BAD CODE</a>
+                {{!-- {{#if loggedIn}} --}}
                 <a href="/profile">PROFILE</a>
-                {{else}}
-                <a href="/login">LOGIN</a>
-                {{/if}}
+                {{!-- {{else}} --}}
+                <button id="signup-btn">TEST LOG</button>
+                {{!-- {{/if}} --}}
             </nav>
         </header>
         <main>
             {{{body}}}
+            <div id="signup-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="signup-box">
+                    <form class='signup-form'>
+                    <section class="modal-body">
+                        <h2>SIGN UP!</h2>
+                        <label for="email-signup">email:</label>
+                        <input type="text" id="email-signup" />
+                    </section>
+                    <section>
+                        <label for="username-signup">username:</label>
+                        <input type="text" id="username-signup" />
+                    </section>
+                    <section class="modal-body">
+                        <label for="password-signup">password:</label>
+                        <input type="password" id="password-signup" />
+                    </section>
+                    <section class="modal-body">
+                        <button type="submit" id="signup-btn">sign up</button>
+                    </section>
+                    </form>
+                    </div>
+                    <div class="login-box">
+                    <form class='login-form'>
+                    <section class="modal-body">
+                        <h2>LOG IN!</h2>
+                        <label for="username-login">username:</label>
+                        <input type="text" id="username-login" />
+                    </section>
+                    <section class="modal-body">
+                        <label for="password-login">password:</label>
+                        <input type="password" id="password-login" />
+                    </section>
+                    <section class="modal-body">
+                        <button type="submit" id="log-btn">log in</button>
+                    </section>
+                </form>
+                </div>
+                </div>
+            </div>
         </main>
         <footer>
             Test Development Build 0.1
         </footer>
+        <script src="/js/vote.js"></script>
+        <script src="/js/login.js"></script>
     </body>
 </html>

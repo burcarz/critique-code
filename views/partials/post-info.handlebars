@@ -5,11 +5,13 @@
     </div>
     <div class="body">
         <p>{{post_body}}</p>
-        {{!-- <img src="{{post_body}}" /> --}}
     </div>
     <div class="info">
         <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-
-        {{vote_count}} votes
+    </div>
+    <div>
+        <button type="button" class="vote-btn">vote</button>
+        <span id="vote-val" value="{{vote_count}}">{{vote_count}}</span>
+        <span> votes</span>
     </div>
 </section>
