@@ -1,11 +1,11 @@
 <div class="comments">
-    {{#each}}
+    {{#each this}}
     <section class="comment">
         <div class="user-attach">
             {{user.username}}
         </div>
         <div class="com-text">
-            {{comment_text}}
+            {{comment_body}}
         </div>
     </section>
     {{/each}}
