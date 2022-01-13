@@ -89,6 +89,7 @@ router.get('/:id', (req, res) => {
     Post.create({
         // TODO: will need to be changed
       title: req.body.title,
+      post_body: req.body.post_body,
       post_url: req.body.post_url,
       user_id: req.body.user_id
     })
@@ -106,7 +107,8 @@ router.get('/:id', (req, res) => {
   router.put('/:id', (req, res) => {
     Post.update(
       {
-        title: req.body.title
+        title: req.body.title,
+        post_url: req.body.post_url
       },
       {
         where: {
