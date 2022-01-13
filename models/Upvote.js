@@ -10,12 +10,12 @@ UpVote.init(
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: false
+            allowNull: true
         },
 
         user_id: { // getting a user by their id, references user model
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'user',
                 key: 'id'
@@ -24,7 +24,7 @@ UpVote.init(
 
         post_id: { // getting a post by their id, references post model
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model: 'post',
                 key: 'id'

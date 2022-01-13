@@ -8,24 +8,23 @@ Post.init(
     {
         id: {
             type: DataTypes.INTEGER,
-            allowNull: false, // allow null is always going to false on any model, since this is the primary reference point
+            allowNull: true, 
             primaryKey: true,
             autoIncrement: true 
         },
 
         title: { // title of the post (will not contain code)
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
 
         post_body: { // body of the post (can contain code)
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: true
         },
 
         post_url: { // post url, with validation
             type: DataTypes.STRING,
-            allowNull: false,
             validate: {
                 isUrl: true
             }
