@@ -10,10 +10,10 @@ router.get('/', (req, res) => {
     Post.findAll({
         //Query config
         attributes: [
-          'id', 
-          'title',
-          'body',
+          'user_id', 
           'post_url', 
+          'title',
+          'post_body', 
           'created_at'
         ],
         // We could use 
@@ -89,7 +89,7 @@ router.get('/:id', (req, res) => {
     Post.create({
         // TODO: will need to be changed
       title: req.body.title,
-      body:req.body.body,
+      post_body: req.body.post_body,
       post_url: req.body.post_url,
       user_id: req.body.user_id
     })
@@ -110,7 +110,8 @@ router.get('/:id', (req, res) => {
     Post.update(
       {
         title: req.body.title,
-        body: req.body.body
+        post_url: req.body.post_url
+
       },
       {
         where: {

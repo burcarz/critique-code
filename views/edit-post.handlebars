@@ -1,0 +1,16 @@
+<article>
+    <a href="profile"> &larr; Back to profile</a>
+    <h2>
+        edit post
+    </h2>
+    <form class="post-edit">
+        <section>
+            <input name="post-title" type="text" value="{{post.title}}" />
+        </section>
+        <section>
+            <textarea name="post-body" id="post-code" value="{{post.body}}"></textarea>
+        </section>
+        <button type="submit">Make Changes</button>
+        <button type="button" class="dlt-post">Delete This Post</button>
+    </form>
+</article>

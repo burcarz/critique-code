@@ -42,8 +42,27 @@ router.post('/', (req, res) => {
     if(req.session) {
         Comment.create({
             post_id: req.body.post_id,
-            comment_title:req.body.comment_title,
-            comment_text: req.body.comment_text,
+            comment_body: req.body.comment_body,
+            // Get the id from the session
+            user_id: req.session.user_id
+        })
+        .then(dbCommentData => {
+            res.json(dbCommentData);
+        })
+        .catch(err => {
+            // Comment not found
+            console.log(err);
+            res.status(400).json(err);
+        });
+    }
+});
+
+// PUT /api/comments/   Update  a  comment
+router.put('/', (req, res) => {
+    if(req.session) {
+        Comment.update({
+            post_id: req.body.post_id,
+            comment_body: req.body.comment_body,
             // Get the id from the session
             user_id: req.session.user_id
         })

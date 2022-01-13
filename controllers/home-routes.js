@@ -11,7 +11,43 @@ const router = require('express').Router();
 
 // POST  /   get all Posts
 router.get('/', (req, res) => {
+
+   res.render('homepage');
     Post.findALL({
+
+         //Query config
+         attributes: [
+            'id', 
+            'title',
+            'post_body',
+            'vote_count', 
+            'created_at'
+          ],
+          // We could use 
+        //  order: [['created_at', 'DESC']],
+          include: [
+              // TODO: Will most likely need to be adjusted
+              {
+                model: Comment,
+                attributes: [
+                  'id', 
+                  'comment_body',
+                  'post_id',
+                  'user_id',
+                  'created_at'
+                ],
+                // Attach the username to the comment
+                include: {
+                  model:User,
+                  attributes: ['username']
+                }
+  
+              },
+              {   // User who posted
+                  model: User, 
+                  attributes: ['username']
+              }
+          ]
 
     })
     .then(dbPostData => {
@@ -63,16 +99,24 @@ router.get('/post/:id', (req,res) => {
             id: req.params.id
         },
         attributes: [
-            'id',
+            'id', 
             'title',
-            'body',
-            'post_url',
-            'created_at',
+            'post_body',
+            'vote_count', 
+            'created_at'
         ],
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_body', 'post_id', 'user_id', 'created_at'],
+
+                attributes: [
+                    'id', 
+                    'comment_body',
+                    'post_id',
+                    'user_id',
+                    'created_at'
+                ],
+
                 include: {
                     model: User, 
                     attributes: ['username']
