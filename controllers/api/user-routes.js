@@ -37,7 +37,7 @@ router.get('/:id', (req, res) => {
             model: Comment,
             attributes: [
               'id', 
-              'comment_text',
+              'comment_body',
               'created_at'
             ],
             // Show which posts the users commented on
@@ -72,7 +72,7 @@ router.post('/', (req, res) => {
    // TODO: will need to adjust
   User.create({
     username: req.body.username,
-   // email: req.body.email,
+    email: req.body.email,
     password: req.body.password
   })
   
