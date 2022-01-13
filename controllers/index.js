@@ -4,8 +4,8 @@ const router = require('express').Router();
 const apiRoutes = require('./api');
 const homeRoutes = require('./home-routes');
 const profileRoutes = require('./profile-routes');
-const adviceRoutes = require('/advice');
-const funnyRoutes = require('/funny');
+const adviceRoutes = require('./advice');
+const funnyRoutes = require('./funny');
 
 // Direct the router for each route
 router.use('/api', apiRoutes);
