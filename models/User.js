@@ -1,86 +1,88 @@
-const { Model, DataTypes } = require('sequelize')
-const sequelize = require('../config/connection')
-const bcrypt = require('bcrypt')
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
+const bcrypt = require("bcrypt");
 
 // create the user model
 
 class User extends Model {
-    // this method checks the password with the hashed password to match and then logs in the user
-    checkPassword(loginPw) {
-        return bcrypt.compareSync(loginPw, this.password)
-    }
+  // this method checks the password with the hashed password to match and then logs in the user
+  checkPassword(loginPw) {
+    return bcrypt.compareSync(loginPw, this.password);
+  }
 }
 
 // define table columns, configuration for user model
 
 User.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            autoIncrement: true,
-            primaryKey: true,
-            allowNull: true,
-        },
-
-        username: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-
-        email: {
-            type: DataTypes.STRING,
-            allowNull: false,
-
-            // there cannot be any duplicate emails, so we will check to see if it is unique
-            unique: true,
-
-            // if allow null is set to false, we should validate this
-            validate: {
-                isEmail: true
-            }
-        },
-
-        password: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [5]
-            }
-        }
-
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: true,
     },
-    // table configuration starts here
-    {
-        // hooks for password
 
-        hooks: {
-            async beforeCreate(newUserData) {
-                newUserData.password = await bcrypt.hash(newUserData.password, 10)
-                return newUserData
-            },
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
 
-            // setup before lifecycle 'hook' functionality for when the user wants to update the password
-            async beforeUpdate(updatedUserData) {
-                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10)
-                return updatedUserData
-            }
-        },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
 
-        // pass imported sequelize connection 
-        sequelize,
+      // there cannot be any duplicate emails, so we will check to see if it is unique
+      unique: true,
 
-        // dont automatically update the timestamp fields
-        timestamps: false,
+      // if allow null is set to false, we should validate this
+      validate: {
+        isEmail: true,
+      },
+    },
 
-        // dont pluralize name of database table
-        freezeTableName: true,
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [5],
+      },
+    },
+  },
+  // table configuration starts here
+  {
+    // hooks for password
 
-        // use underscores instead of camel-casing
-        underscored: true,
+    hooks: {
+      async beforeCreate(newUserData) {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
 
-        // make it so our model name stays lowercase in the database and also set the model name as 'user'
-        modelName: 'user'
-    }
-)
+      // setup before lifecycle 'hook' functionality for when the user wants to update the password
+      async beforeUpdate(updatedUserData) {
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
+        return updatedUserData;
+      },
+    },
 
-module.exports = User
+    // pass imported sequelize connection
+    sequelize,
+
+    // dont automatically update the timestamp fields
+    timestamps: false,
+
+    // dont pluralize name of database table
+    freezeTableName: true,
+
+    // use underscores instead of camel-casing
+    underscored: true,
+
+    // make it so our model name stays lowercase in the database and also set the model name as 'user'
+    modelName: "user",
+  }
+);
+
+module.exports = User;
