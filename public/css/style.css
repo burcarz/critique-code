@@ -98,3 +98,7 @@ p {
     padding: 2px 16px;
 }
 /* END MODAL STYLES */
+
+.hidden {
+    opacity: 0;
+}
