@@ -56,7 +56,7 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'post_url', 'title', 'created_at'],
+      attributes: ['id', 'post_body', 'title', 'created_at'],
       include: [
         {
           model: User,
@@ -90,7 +90,7 @@ router.get('/:id', (req, res) => {
         // TODO: will need to be changed
       title: req.body.title,
       post_body: req.body.post_body,
-      post_url: req.body.post_url,
+     // post_url: req.body.post_url,
       user_id: req.body.user_id
     })
       .then(dbPostData =>  {
@@ -108,7 +108,7 @@ router.get('/:id', (req, res) => {
     Post.update(
       {
         title: req.body.title,
-        post_url: req.body.post_url
+       // post_url: req.body.post_url
       },
       {
         where: {
