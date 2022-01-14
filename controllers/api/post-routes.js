@@ -131,11 +131,10 @@ router.get('/:id', (req, res) => {
 
 // TEST VOTE ROUTE  _____ CHANGES VOTE COUNT
 router.put('/vote/:id', (req, res) => {
-  Post.update(
+  Post.increment(
+    'vote_count',
     {
-      vote_count: req.params.vote_count + 1
-    },
-    {
+      by: 1,
       where: {
         id: req.params.id
       }

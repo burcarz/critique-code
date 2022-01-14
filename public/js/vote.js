@@ -1,20 +1,10 @@
-// DOESN'T WORK RIGHT NOW
-// Supposed to be a put request that vote by 1
-async function voteCLickHandler(event) {
+const voteClickHandler = async function(event) {
     event.preventDefault();
+    const postId = document.getElementById('id-val').innerHTML;
 
-    const postId = window.location.toString().split('/')[
-        window.location.toString().split('/').length - 1
-    ];
-
-    const voteCount = document.getElementById('vote-val').innerHTML;
-    console.log(voteCount);
     // console.log(postId);
     const response = await fetch(`/api/posts/vote/${postId}`, {
         method: 'PUT',
-        body: JSON.stringify({
-            vote_count: voteCount
-        }),
         headers: {
             'Content-Type': 'application/json'
         }
@@ -27,4 +17,12 @@ async function voteCLickHandler(event) {
     }
 }
 
-document.querySelector('.vote-btn').addEventListener('click', voteCLickHandler);
+window.onload = function() {
+    // const response = fetch('/api/posts/:id', {
+    //     method: 'GET',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // })
+    document.querySelector('vote-btn').addEventListener('click', voteClickHandler);
+}
