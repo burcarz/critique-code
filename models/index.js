@@ -22,9 +22,9 @@ Post.hasMany(Tag, {
     foreignKey: 'post_id'
 });
 
-Tag.belongsToMany(Post, {
+/*Tag.belongsToMany(Post, {
     foreignKey: 'post_id'
-});
+});*/
 
 // User and Posts have many comments
 
