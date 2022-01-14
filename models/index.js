@@ -1,6 +1,7 @@
 const User = require("./User");
 const Post = require("./Post");
 const Comment = require("./Comment");
+const Tag = require('./Tag');
 
 // create associations
 
@@ -13,6 +14,16 @@ User.hasMany(Post, {
 // association for Post and User, relationship being that Post belongs to User model
 Post.belongsTo(User, {
   foreignKey: "user_id",
+});
+
+
+// association between tags and post 
+Post.hasMany(Tag, {
+    foreignKey: 'post_id'
+});
+
+Tag.belongsToMany(Post, {
+    foreignKey: 'post_id'
 });
 
 // User and Posts have many comments
