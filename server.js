@@ -13,7 +13,8 @@ require('dotenv').config();
 
 // Setup handlebars
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({})
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers })
 
 
 
