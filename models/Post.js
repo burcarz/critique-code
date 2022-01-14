@@ -40,6 +40,16 @@ Post.init(
         key: "id",
       },
     },
+
+    tag_genre: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    tag_language: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
 
   {
