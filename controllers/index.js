@@ -7,12 +7,14 @@ const profileRoutes = require('./profile-routes');
 const adviceRoutes = require('./advice-routes');
 const funnyRoutes = require('./funny-routes');
 
+
 // Direct the router for each route
 router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 router.use('/profile', profileRoutes);
 router.use('/advice', adviceRoutes);
 router.use('/funny', funnyRoutes);
+
 
 
 
