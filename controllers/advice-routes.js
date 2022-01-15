@@ -13,7 +13,7 @@ router.get('/', (req,res) => {
         where: {
           // use the Tag to sort.
           // TODO:  Is the model changed  yet?
-          post_tag: req.params.post_tag
+          tag_genre: 'Advice'
         },
         attributes: [
           'id',
