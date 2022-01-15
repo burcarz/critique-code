@@ -277,7 +277,7 @@ router.get('/:id', (req, res) => {
   });
 
 // Search by language tag, will get all posts with said tag name
-router.get('/:tag', (req, res) => {
+router.get('/:tag_language', (req, res) => {
   Post.findAll({
     where: {
       tag_language: req.params.tag
