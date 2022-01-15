@@ -27,7 +27,13 @@ const postdata = [
   },
   {
     title: 'Title 4',
-    post_body: 'Post Body 4',
+    post_body: `
+    public static int[] filterNonUnique(int[] elements) {
+      return Arrays.stream(elements)
+          .filter(el -> indexOf(elements, el) == lastIndexOf(elements, el))
+          .toArray();
+    }
+    `,
     vote_count: 300,
     user_id: 4,
     tag_genre: 'Funny',
@@ -35,7 +41,24 @@ const postdata = [
   },
   {
     title: 'Title 5',
-    post_body: 'Post Body 5',
+    post_body: `
+    using System;
+
+    namespace MyApplication
+    {
+      class Program
+      {
+        static void Main(string[] args)
+        {
+          string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+          foreach (string i in cars) 
+          {
+            Console.WriteLine(i);
+          }   
+        }
+      }
+    }
+    `,
     vote_count: 420,
     user_id: 5,
     tag_genre: 'Advice',
