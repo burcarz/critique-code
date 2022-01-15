@@ -15,7 +15,6 @@
     <div>
         <h3 class="block-head">
             POST TITLE
-            <button class="modalBtn">modal</button>
         </h3>
         <div>
             <p>
@@ -29,7 +28,7 @@
     <ul class="posts">
         {{#each posts as |post|}}
         <li>
-            {{> post-info post}}
+            {{> post-info posts}}
         </li>
         {{/each}}
     </ul>

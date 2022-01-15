@@ -10,20 +10,22 @@
       </head>
 
     <body>
+        <div class= "auth-btns">
+        <a href='' id="signup-btn">Sign Up</a>
+        <a href='' id="login-btn">Log In</a>
+        </div>
         <header class="h-title">
             <a href="/">
             <h1  class="title">Critique<span id="h-span">Code</span></h1>
             </a>
+        </header>
             <nav>
                 <a href="/funny">FUNNY CODE</a>
                 <a href="/advice">BAD CODE</a>
-                {{!-- {{#if loggedIn}} --}}
+                {{#if loggedIn}}
                 <a href="/profile">PROFILE</a>
-                {{!-- {{else}} --}}
-                <button id="signup-btn">TEST LOG</button>
-                {{!-- {{/if}} --}}
+                {{/if}}
             </nav>
-        </header>
         <main>
             {{{body}}}
             <div id="signup-modal" class="modal">

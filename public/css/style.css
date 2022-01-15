@@ -4,6 +4,7 @@
 
 body {
     background-color: #5831F0;
+    display: inline;
 }
 
 h1 {
@@ -34,6 +35,63 @@ p {
     color: white;
     font: 16px;
 }
+
+header {
+    padding: 25px 25px 0 25px;
+    margin: 15px 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+/* header span style */
+#h-span {
+    font-size: 34px;
+    font-weight: 900;
+}
+
+nav {
+    display: flex;
+    justify-content: center
+}
+
+/* link styles and animation */
+a {
+    color: #000;
+    position: relative;
+    text-decoration: none;
+}
+
+a::before {
+    background: hsl(45 100% 70%);
+    content: "";
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: top;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+
+a:hover::before {
+    transform: scaleX(1);
+    transform-origin: top;
+}
+
+/* signup/login buttons */
+.auth-btns {
+    background-color: #888;
+    border: 1px solid #2B3042;
+    color: white;
+    padding: 10px 24px;
+    cursor: pointer;
+    float: right;
+    margin: 10px;
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 10%;
+    z-index: 100;
+}
+
 /* modal CSS */
 .modal {
     display: none; /* Hidden by default */
@@ -102,3 +160,4 @@ p {
 .hidden {
     opacity: 0;
 }
+
