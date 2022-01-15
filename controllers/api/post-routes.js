@@ -2,6 +2,99 @@ const router = require('express').Router();
 // Include User so we can get user info from the user_id foreign key
 // to join them together
 const { Post, User, Comment }  = require('../../models');
+
+// // Search for Advice tag_genre and rank DESC
+router.get('/adviceranked', (req, res) => {
+  Post.findAll({
+   
+    where: {
+     tag_genre:'Advice'
+    },
+    attributes: [
+      'id', 
+      'post_body', 
+      'title', 
+      'created_at',
+      'vote_count',
+      'user_id',
+      'tag_genre',
+      'tag_language'
+
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ], 
+    include: [
+      {
+      model: Comment,
+      attributes: ['id', 'comment_body']
+      }
+    ],
+    order: [['vote_count', 'DESC']]
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this genre' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+        // Server error
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// // Search for Advice tag_genre and rank DESC
+router.get('/funnyranked', (req, res) => {
+  Post.findAll({
+   
+    where: {
+     tag_genre:'Funny'
+    },
+    attributes: [
+      'id', 
+      'post_body', 
+      'title', 
+      'created_at',
+      'vote_count',
+      'user_id',
+      'tag_genre',
+      'tag_language'
+
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ], 
+    include: [
+      {
+      model: Comment,
+      attributes: ['id', 'comment_body']
+      }
+    ],
+    order: [['vote_count', 'DESC']]
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No post found with this genre' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+        // Server error
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 // // Search for Advice tag_genre
 router.get('/advice', (req, res) => {
   Post.findAll({
@@ -273,48 +366,48 @@ router.put('/vote/:id', (req, res) => {
 
 
   // Search for Advice tag_genre
-  router.get('/advice', (req, res) => {
-    Post.findAll({
-      where: {
-        tag_genre:'Advice'
-      },
-      attributes: [
-        'id', 
-        'post_body', 
-        'title', 
-        'created_at',
-        'vote_count',
-        'user_id',
-        'tag_genre',
-        'tag_language'
+  // router.get('/advice', (req, res) => {
+  //   Post.findAll({
+  //     where: {
+  //       tag_genre:'Advice'
+  //     },
+  //     attributes: [
+  //       'id', 
+  //       'post_body', 
+  //       'title', 
+  //       'created_at',
+  //       'vote_count',
+  //       'user_id',
+  //       'tag_genre',
+  //       'tag_language'
 
-      ],
-      include: [
-        {
-          model: User,
-          attributes: ['username']
-        }
-      ], 
-      include: [
-        {
-        model: Comment,
-        attributes: ['id', 'comment_body']
-        }
-      ]
-    })
-      .then(dbPostData => {
-        if (!dbPostData) {
-          res.status(404).json({ message: 'No post found with this genre' });
-          return;
-        }
-        res.json(dbPostData);
-      })
-      .catch(err => {
-          // Server error
-        console.log(err);
-        res.status(500).json(err);
-      });
-  });
+  //     ],
+  //     include: [
+  //       {
+  //         model: User,
+  //         attributes: ['username']
+  //       }
+  //     ], 
+  //     include: [
+  //       {
+  //       model: Comment,
+  //       attributes: ['id', 'comment_body']
+  //       }
+  //     ]
+  //   })
+  //     .then(dbPostData => {
+  //       if (!dbPostData) {
+  //         res.status(404).json({ message: 'No post found with this genre' });
+  //         return;
+  //       }
+  //       res.json(dbPostData);
+  //     })
+  //     .catch(err => {
+  //         // Server error
+  //       console.log(err);
+  //       res.status(500).json(err);
+  //     });
+  // });
 
 
 
