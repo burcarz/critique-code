@@ -92,6 +92,16 @@ a:hover::before {
     z-index: 100;
 }
 
+/* timeline styles */
+.post {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
 /* modal CSS */
 .modal {
     display: none; /* Hidden by default */
