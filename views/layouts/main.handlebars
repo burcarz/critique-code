@@ -6,26 +6,42 @@
         <title>Critique Code</title>
         <link rel="stylesheet" href="/css/style.css">
         <link rel="stylesheet"
-            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/night-owl.min.css">    
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/night-owl.min.css"> 
+        <link rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
       </head>
 
     <body>
+        <section class="top">
         <div class= "auth-btns">
-        <a href='' id="signup-btn">Sign Up</a>
-        <a href='' id="login-btn">Log In</a>
+            {{#if loggedIn}}
+        <button id="logout-btn">Log Out</button>
+            {{else}}
+        <button id="signup-btn">Sign Up</button>
+        <button id="login-btn">Log In</button>
+            {{/if}}
         </div>
         <header class="h-title">
             <a href="/">
             <h1  class="title">Critique<span id="h-span">Code</span></h1>
             </a>
         </header>
-            <nav>
+        <div class="nav-section">
+            <div class="nav-bar">
+                <nav class="links">
                 <a href="/funny">FUNNY CODE</a>
                 <a href="/advice">BAD CODE</a>
                 {{#if loggedIn}}
                 <a href="/profile">PROFILE</a>
                 {{/if}}
-            </nav>
+                </nav>
+            </div>
+            <form class="search-form">
+            <input type="text" placeholder="Search" name="search">
+            <button type="submit" id="search-btn">Search</button>
+            </form>
+        </div>
+        </section>
         <main>
             {{{body}}}
             <div id="signup-modal" class="modal">
