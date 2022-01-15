@@ -95,6 +95,8 @@ router.get('/funnyranked', (req, res) => {
     });
 });
 
+
+
 // // Search for Advice tag_genre
 router.get('/advice', (req, res) => {
   Post.findAll({
@@ -273,6 +275,48 @@ router.get('/:id', (req, res) => {
         res.status(500).json(err);
       });
   });
+
+// Search by language tag, will get all posts with said tag name
+router.get('/:tag_language', (req, res) => {
+  Post.findAll({
+    where: {
+      tag_language: req.params.tag
+    }, 
+    attributes: [
+      'id',
+      'post_body',
+      'title',
+      'created_at',
+      'vote_count',
+      'user_id',
+      'tag_genre',
+      'tag_language'
+    ],
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_body']
+      }
+    ]
+  })
+    .then(dbPostData => {
+      if(!dbPostData) {
+        res.status(404).json({ message: 'No post found with this language tag' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+});
 
 // POST /api/post/       CREATE POST
   router.post('/', (req, res) => {
