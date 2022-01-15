@@ -21,7 +21,7 @@ Post.init(
 
     post_body: {
       // body of the post (can contain code)
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
 
@@ -40,6 +40,16 @@ Post.init(
         key: "id",
       },
     },
+
+    tag_genre: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+
+    tag_language: {
+      type: DataTypes.STRING,
+      allowNull: false
+    }
   },
 
   {

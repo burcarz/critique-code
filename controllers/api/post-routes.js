@@ -10,11 +10,14 @@ router.get('/', (req, res) => {
     Post.findAll({
         //Query config
         attributes: [
-          'user_id', 
-          'vote_count', 
-          'title',
+          'id', 
           'post_body', 
-          'created_at'
+          'title', 
+          'created_at',
+          'vote_count',
+          'user_id',
+          'tag_genre',
+          'tag_language'
         ],
         // We could use 
       //  order: [['created_at', 'DESC']],
@@ -56,7 +59,16 @@ router.get('/:id', (req, res) => {
       where: {
         id: req.params.id
       },
-      attributes: ['id', 'post_body', 'title', 'created_at'],
+      attributes: [
+        'id', 
+        'post_body', 
+        'title', 
+        'created_at',
+        'vote_count',
+        'user_id',
+        'tag_genre',
+        'tag_language'
+      ],
       include: [
         {
           model: User,
@@ -169,6 +181,51 @@ router.put('/vote/:id', (req, res) => {
         res.json(dbPostData);
       })
       .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+
+
+  // Search for Advice tag_genre
+  router.get('/advice', (req, res) => {
+    Post.findOne({
+      where: {
+        tag_genre:'advice'
+      },
+      attributes: [
+        'id', 
+        'post_body', 
+        'title', 
+        'created_at',
+        'vote_count',
+        'user_id',
+        'tag_genre',
+        'tag_language'
+
+      ],
+      include: [
+        {
+          model: User,
+          attributes: ['username']
+        }
+      ], 
+      include: [
+        {
+        model: Comment,
+        attributes: ['id', 'comment_body']
+        }
+      ]
+    })
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No post found with this genre' });
+          return;
+        }
+        res.json(dbPostData);
+      })
+      .catch(err => {
+          // Server error
         console.log(err);
         res.status(500).json(err);
       });

@@ -4,7 +4,11 @@
         <span>Posted by: {{user.username}}</span>
     </div>
     <div class="body">
-        <p>{{post_body}}</p>
+        <pre>
+            <code>
+                {{post_body}}
+            </code>
+        </pre>
     </div>
     <div class="info">
         <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
