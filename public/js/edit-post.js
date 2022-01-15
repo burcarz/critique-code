@@ -1,11 +1,11 @@
-async function createPostHandler(event) {
+async function editPostHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="post-title"').value;
     const body = document.querySelector('input[name="post_body"]').value;
 
     const response = await fetch('api/posts', {
-        method: 'POST',
+        method: 'PUT',
         body: JSON.stringify({
             title,
             body
@@ -18,7 +18,8 @@ async function createPostHandler(event) {
     if (response.ok) {
         console.log('success');
     } else {
-        console.log('failed to create post');
+        console.log('failed to edit post');
     }
-    
 }
+// Might need 'click' instead of 'submit'
+document.querySelector('#edit-btn').addEventListener('submit', editPostHandler);
