@@ -18,11 +18,5 @@ const voteClickHandler = async function(event) {
 }
 
 window.onload = function() {
-    // const response = fetch('/api/posts/:id', {
-    //     method: 'GET',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     }
-    // })
-    document.querySelector('vote-btn').addEventListener('click', voteClickHandler);
+    document.querySelector('up-vote-icon').addEventListener('click', voteClickHandler);
 }

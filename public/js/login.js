@@ -36,7 +36,7 @@ async function signupFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-            console.log('success');
+            document.location.replace('/')
         } else {
             console.log('failure to signup');
         }
@@ -59,7 +59,7 @@ async function loginFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
-            console.log('success');
+            document.location.replace('/');
         } else {
             console.log('failure to login')
         }
