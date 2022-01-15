@@ -29,42 +29,40 @@
         <main>
             {{{body}}}
             <div id="signup-modal" class="modal">
-                <div class="modal-content">
+                <div class="modal-content container right-panel-active">
                     <span class="close">&times;</span>
-                    <div class="signup-box">
-                    <form class='signup-form'>
+                    <!-- sign up -->
+                    <div class="signup-box container_form container_signup">
+                    <form action="#" class="form" id="form1">
                     <section class="modal-body">
-                        <h2>SIGN UP!</h2>
-                        <label for="email-signup">email:</label>
-                        <input type="text" id="email-signup" />
-                    </section>
-                    <section>
-                        <label for="username-signup">username:</label>
-                        <input type="text" id="username-signup" />
-                    </section>
-                    <section class="modal-body">
-                        <label for="password-signup">password:</label>
-                        <input type="password" id="password-signup" />
-                    </section>
-                    <section class="modal-body">
-                        <button type="submit" id="signup-btn">sign up</button>
+                        <h2 class="form_title">SIGN UP!</h2>
+                        <input type="text" class="input" placeholder="Email" id="email-signup" />
+                        <input type="text" class="input" placeholder="Username" id="username-signup" />
+                        <input type="password" class="input" id="password-signup" />
+                        <button type="submit" class="auth-button" id="signup-btn">Sign up</button>
                     </section>
                     </form>
                     </div>
-                    <div class="login-box">
-                    <form class='login-form'>
+                    <!-- login -->
+                    <div class="login-box container_form container_signin">
+                    <form action="#" class='form' id="form2">
                     <section class="modal-body">
-                        <h2>LOG IN!</h2>
-                        <label for="username-login">username:</label>
-                        <input type="text" id="username-login" />
+                        <h2 class="form_title">LOG IN!</h2>
+                        <input type="text" class="input" placeholder="username" id="username-login" />
+                        <input type="password" class="input" id="password-login" />
+                        <button type="submit" class="auth-button" id="log-btn">Log in</button>
                     </section>
-                    <section class="modal-body">
-                        <label for="password-login">password:</label>
-                        <input type="password" id="password-login" />
-                    </section>
-                    <section class="modal-body">
-                        <button type="submit" id="log-btn">log in</button>
-                    </section>
+                    <!-- overlay -->
+                    <div class="container_overlay">
+                        <div class="overlay">
+                            <div class="overlay_panel overlay_left">
+                                <button class="auth-button" id="logIn">Log In</button>
+                            </div>
+                            <div class="overlay_panel overlay_right">
+                                <button class="auth-button" id="signUp">Sign Up</button>
+                            </div>
+                        </div>
+                    </div>
                 </form>
                 </div>
                 </div>
@@ -75,6 +73,7 @@
         </footer>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>        <script></script>
         <script src="/js/syntax-highlight.js"></script>
+        <script src="/js/form-handling.js"></script>
         <script src="/js/vote.js"></script>
         <script src="/js/login.js"></script>
     </body>
