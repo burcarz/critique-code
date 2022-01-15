@@ -3,7 +3,7 @@ const { Post } = require('../models');
 const postdata = [
   {
     title: 'Title 1',
-    post_body: 'Post Body 1',
+    post_body: 'let a = 0; let b = 1; console.log(a + b);',
     vote_count: 40,
     user_id: 1
   },
