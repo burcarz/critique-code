@@ -18,6 +18,8 @@ const postdata = [
     post_body: 'Post Body 3',
     vote_count: 27,
     user_id: 3
+
+    
   },
   {
     title: 'Title 4',

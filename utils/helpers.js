@@ -12,5 +12,13 @@ module.exports = {
     },
     getFunnyPosts: posts => {
         return posts.filter(post => post.tag === "funny")
-    }
+    },
 }
+
+// module.exports = Handlebars.registerHelper('getMostVoted', (posts, opt) => {
+//     let results = '';
+//     posts.filter(post => {
+//         results += opt.fn(post)
+//     });
+//     return results;
+// })
