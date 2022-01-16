@@ -1,16 +1,48 @@
 // retrieves top post information
 
-async function getTopPosts() {
-    let adviceBody = document.querySelector('advice-post-body');
-    let funnyBody = document.querySelector('funny-post-body');
-    let adviceTitle = document.querySelector('#advice-title');
-    let funnyTitle = document.querySelector('#funny-title');
+async function getTopAdvice() {
+    postBody = '';
+    postTitle = '';
+    const response = await fetch('/api/posts/adviceranked');
+    const data = await response.json();
+    console.log(data[0]);
 
-    const response = await fetch('/api/posts/adviceranked', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    console.log(response);
+    postBody += `<code>${data[0].post_body}</code>`;
+    postTitle += `<h3>${data[0].title}</h3>`;
+
+    displayAdvice(postBody, postTitle);
+    
 }
+
+async function getTopFunny() {
+    postBody = '';
+    postTitle = '';
+    const response = await fetch('/api/posts/funnyranked');
+    const data = await response.json();
+    console.log(data[0]);
+
+    postBody += `<code>${data[0].post_body}</code>`;
+    postTitle += `<h3>${data[0].title}</h3>`;
+
+    displayAdvice(postBody, postTitle);
+    
+}
+
+async function displayAdvice(postBody, postTitle) {
+    let adviceBody = document.querySelector('#top-advice');
+    let adviceTitle = document.querySelector('#advice-title');
+    
+    adviceTitle.innerHTML = `${postTitle}`;
+    // adviceBody.innerHTML = `${postBody}`;
+}
+
+async function displayFunny(postBody, postTitle) {
+    let funnyTitle = document.querySelector('#funny-title');
+    let funnyBody = document.querySelector('funny-post-body');
+
+    funnyTitle.innerHTML = `${postTitle}`;
+    // funnyBody.innerHTML = `${postBody}`;
+}
+
+getTopFunny();
+getTopAdvice();
