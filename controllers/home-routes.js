@@ -8,10 +8,53 @@ const router = require('express').Router();
 /** Render homepage and pass posts data to it.
 // TODO: We will need to add Best bad post, and best good answer
 */
-
+// router.get('/', (req, res) => {
+//     Post.findAll({
+//         where: {
+//             tag_genre: 'Advice'
+//         },
+//         attributes: [
+//             'id',
+//             'post_body',
+//             'title',
+//             'created_at',
+//             'vote_count',
+//             'user_id',
+//             'tag_genre',
+//             'tag_language'
+//         ],
+//         include: [
+//             {
+//                 model: User,
+//                 attributes: ['username']
+//             }
+//         ],
+//         include: [
+//             {
+//                 model: Comment,
+//                 attributes: ['id', 'comment_body']
+//             }
+//         ],
+//         order: [['vote_count', 'DESC']]
+//     })
+//     .then(dbAdviceData => {
+//         if (!dbAdviceData) {
+//             res.status(404).json({ message: 'no post found with this tag genre' });
+//             return;
+//         }
+//         const advicePosts = dbAdviceData.map( post => post.get({ plain: true }));
+//         res.render('homepage', {
+//             advicePosts,
+//             loggedIn: req.session.loggedIn
+//         })
+//     })
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     })
+// })
 // POST  /   get all Posts
 router.get('/', (req, res) => {
-
    //res.render('homepage');
     Post.findAll({
 

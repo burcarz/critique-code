@@ -1,0 +1,31 @@
+<div class="up-vote-icon" id="vote-btn">
+<input type="checkbox" id="upvote-control" />
+<label class="btn" for="upvote-control">
+<i id="upvote-btn" for="upvote-control" class="fas fa-angle-up"></i>
+</label>
+</div>
+<section class="post-body">
+    <div class="title">
+        <a href="/post/{{id}}" target="blank">{{title}}</a>
+        <span>Posted by: {{user.username}}</span>
+    </div>
+    <div class="body">
+        <pre>
+            <code>
+                {{post_body}}
+            </code>
+        </pre>
+    </div>
+    <div class="info">
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+        <span class="hidden" id="id-val">{{id}}</span>
+        <span class="vote-val" id="vote-val" value="{{vote_count}}">{{vote_count}}</span>
+        <span class="vote-val"> votes</span>
+    </div>
+</section>
+<div class="down-vote-icon">
+<input type="checkbox" id="downvote-control" />
+<label class="btn" for="downvote-control">
+<i id="downvote-btn" for="downvote-control"  class="fas fa-angle-down"></i>
+</label>
+</div>
