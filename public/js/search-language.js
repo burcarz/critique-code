@@ -19,6 +19,5 @@ async function getPostByLanguage(language) {
 searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const searchText = document.querySelector('input[name="search"]').value;
-    window.alert(searchText);
     getPostByLanguage(searchText);
 });
