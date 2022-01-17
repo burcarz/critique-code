@@ -1,7 +1,25 @@
 <section>
-    <h2>What Do You Want to Share?</h2>
+    {{!-- <h2>What Do You Want to Share?</h2> --}}
 {{!-- will hide form unless clicked ? --}}
-    <form class="new-post">
+
+{{#if posts.length}}
+<div class="posts-timeline">
+     <h2 id="posts-id">Your Posts: </h2>
+        {{#each posts as |post|}}
+        <div class="post-container">
+            {{> post-info post}}
+        </div>
+         <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+        {{/each}}
+    </div>
+{{/if}}
+
+<div id="btn-new-post-holder">
+   {{!-- <button id="btn-new-post" class="btn-no-style"> + New Post</button> --}}
+   <a href="/profile/create-post">Create Post</a>
+</div>
+
+    {{!-- <form class="new-post">
         <div>
             <label for="post-title">Title</label>
             <input type="text" id="post-title" name="post-title" />
@@ -16,5 +34,5 @@
                 <option value="advice">advice</option>
             </select>
         </div>
-    </form>
+    </form> --}}
 </section>
