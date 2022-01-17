@@ -40,6 +40,7 @@ async function btnClickHandler(event) {
 // sign up form that POSTS new user data to /api/users
 async function signupFormHandler(event) {
     event.preventDefault();
+    let modal = document.getElementById('signup-modal');
     console.log('clicked')
     const email = document.querySelector('#email-signup').value.trim();
     const username = document.querySelector('#username-signup').value.trim();
@@ -58,6 +59,7 @@ async function signupFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
+            modal.style.display = 'none';
             document.location.replace('/')
         } else {
             console.log('failure to signup');
@@ -67,6 +69,7 @@ async function signupFormHandler(event) {
 // login form posts user info to our login route
 async function loginFormHandler(event) {
     event.preventDefault();
+    let modal = document.getElementById('signup-modal');
     console.log('clicked')
     const username = document.querySelector('#username-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
@@ -81,6 +84,7 @@ async function loginFormHandler(event) {
             headers: { 'Content-Type': 'application/json' }
         });
         if (response.ok) {
+            modal.style.display = 'none';
             document.location.replace('/');
         } else {
             console.log('failure to login')
