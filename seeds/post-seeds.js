@@ -178,7 +178,13 @@ const postdata = [
   },
   {
     title: 'Title 20',
-    post_body: 'Post Body 20',
+    post_body:  `
+    public static int[] filterNonUnique(int[] elements) {
+      return Arrays.stream(elements)
+          .filter(el -> indexOf(elements, el) == lastIndexOf(elements, el))
+          .toArray();
+    }
+    `,
     vote_count: 148,
     user_id: 1,
     tag_genre: 'Funny',

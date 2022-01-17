@@ -1,0 +1,33 @@
+<section> 
+  <h2>Create New Post</h2>
+
+  <form class="new-post-form">
+    <div>
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="post-title"  />
+    </div>
+    <div>
+     
+      <label for="post-body">Body</label>
+      <textarea id="post-body" name="post-body"></textarea>
+     
+    </div>
+    <div id="btn-create-post-holder">
+       <button id="btn-create-post" type="submit" class="btn">Create Post</button>
+    </div>
+   
+  </form>
+</section>
+
+  <script src="/js/create-post.js"></script>
+
+
+
+
+   <div class="body">
+        <pre>
+            <code>
+                {{post_body}}
+            </code>
+        </pre>
+    </div>
