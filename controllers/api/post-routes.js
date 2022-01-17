@@ -337,7 +337,9 @@ router.get('/tag/:tag_language', (req, res) => {
       
       title: req.body.title,
       post_body: req.body.post_body,
-      user_id: req.body.user_id
+      user_id: req.session.user_id,
+      tag_genre: req.body.tag_genre,
+      tag_language: req.body.tag_language
     })
       .then(dbPostData =>  {
           res.json(dbPostData);
@@ -354,7 +356,10 @@ router.get('/tag/:tag_language', (req, res) => {
     Post.update(
       {
         title: req.body.title,
-        post_body: req.body.post_body
+        post_body: req.body.post_body,
+        user_id: req.session.user_id,
+        tag_genre: req.body.tag_genre,
+        tag_language: req.body.tag_language
   
       },
       {

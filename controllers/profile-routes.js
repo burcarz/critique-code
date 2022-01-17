@@ -90,7 +90,7 @@ router.get('/create-post',withAuth, (req, res)=> {
       return;
   }
   // no variables need to be passed so only the page name
-  res.render('create-post');
+  res.render('create-post', {loggedIn: true});
 });
 
 
