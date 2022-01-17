@@ -1,16 +1,31 @@
+
 <article>
-    <a href="profile"> &larr; Back to profile</a>
-    <h2>
-        edit post
-    </h2>
-    <form class="post-edit">
-        <section>
-            <input name="post-title" type="text" value="{{post.title}}" />
-        </section>
-        <section>
-            <textarea name="post-body" id="post-code" value="{{post.body}}"></textarea>
-        </section>
-        <button type="submit" id="edit-btn">Make Changes</button>
-        <button type="button" class="dlt-post">Delete This Post</button>
-    </form>
+  <a href="/profile"> &larr; Back to profile</a>
+  <h2>
+    Edit Post
+  </h2>
+  <form class="edit-post-form">
+    <div>
+      <input name="post-title" type="text" value="{{post.title}}" />
+      <textarea name="post-body" id="post-body"> {{post.post_body}}</textarea>
+    </div>
+  
+  </form>
 </article>
+
+  <div id="edit-post-btn-holder">
+     <button id="my-btn"  type="submit" class="update-post-btn">Update</button>
+     <button id="my-btn" type="button" class="delete-post-btn">Delete</button>
+  </div>
+
+
+<h3> Comments on this Post:</h3>
+</br>
+{{> comments post.comments}} 
+
+
+
+ <script src="/js/edit-post.js"></script>
+
+  <script src="/js/delete-post.js"></script>
+

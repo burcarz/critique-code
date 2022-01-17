@@ -141,6 +141,8 @@ router.get('/advice', (req, res) => {
     });
 });
 
+
+// // Search for Advice tag_genre
 router.get('/funny', (req, res) => {
   Post.findAll({
     where: {
@@ -202,7 +204,7 @@ router.get('/', (req, res) => {
         // We could use 
       //  order: [['created_at', 'DESC']],
         include: [
-            // TODO: Will most likely need to be adjusted
+  
             {
               model: Comment,
               attributes: [
@@ -252,13 +254,18 @@ router.get('/:id', (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['username']
+          attributes: [
+            'username'
+          ]
         }
       ], 
       include: [
         {
         model: Comment,
-        attributes: ['id', 'comment_body']
+        attributes: [
+          'id',
+          'comment_body'
+        ]
         }
       ]
     })
@@ -295,13 +302,18 @@ router.get('/tag/:tag_language', (req, res) => {
     include: [
       {
         model: User,
-        attributes: ['username']
+        attributes: [
+          'username'
+        ]
       }
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_body']
+        attributes: [
+          'id',
+         'comment_body'
+        ]
       }
     ]
   })
@@ -321,10 +333,9 @@ router.get('/tag/:tag_language', (req, res) => {
 // POST /api/post/       CREATE POST
   router.post('/', (req, res) => {
     Post.create({
-        // TODO: will need to be changed
+      
       title: req.body.title,
       post_body: req.body.post_body,
-     // post_url: req.body.post_url,
       user_id: req.body.user_id
     })
       .then(dbPostData =>  {
@@ -342,7 +353,9 @@ router.get('/tag/:tag_language', (req, res) => {
     Post.update(
       {
         title: req.body.title,
-       // post_url: req.body.post_url
+        //TODO: Need post body?
+        post_body: req.body.post_body
+  
       },
       {
         where: {
@@ -409,50 +422,7 @@ router.put('/vote/:id', (req, res) => {
   });
 
 
-  // Search for Advice tag_genre
-  // router.get('/advice', (req, res) => {
-  //   Post.findAll({
-  //     where: {
-  //       tag_genre:'Advice'
-  //     },
-  //     attributes: [
-  //       'id', 
-  //       'post_body', 
-  //       'title', 
-  //       'created_at',
-  //       'vote_count',
-  //       'user_id',
-  //       'tag_genre',
-  //       'tag_language'
-
-  //     ],
-  //     include: [
-  //       {
-  //         model: User,
-  //         attributes: ['username']
-  //       }
-  //     ], 
-  //     include: [
-  //       {
-  //       model: Comment,
-  //       attributes: ['id', 'comment_body']
-  //       }
-  //     ]
-  //   })
-  //     .then(dbPostData => {
-  //       if (!dbPostData) {
-  //         res.status(404).json({ message: 'No post found with this genre' });
-  //         return;
-  //       }
-  //       res.json(dbPostData);
-  //     })
-  //     .catch(err => {
-  //         // Server error
-  //       console.log(err);
-  //       res.status(500).json(err);
-  //     });
-  // });
-
+  
 
 
 module.exports = router;

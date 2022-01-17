@@ -61,10 +61,13 @@ router.get('/', (req, res) => {
          //Query config
          attributes: [
             'id', 
-            'title',
-            'post_body',
-            'vote_count', 
-            'created_at'
+            'post_body', 
+            'title', 
+            'created_at',
+            'vote_count',
+            'user_id',
+            'tag_genre',
+            'tag_language'
           ],
           // We could use 
         //  order: [['created_at', 'DESC']],
@@ -141,11 +144,16 @@ router.get('/post/:id', (req,res) => {
             id: req.params.id
         },
         attributes: [
+
             'id', 
-            'title',
-            'post_body',
-            'vote_count', 
-            'created_at'
+            'post_body', 
+            'title', 
+            'created_at',
+            'vote_count',
+            'user_id',
+            'tag_genre',
+            'tag_language'
+           
         ],
         include: [
             {
