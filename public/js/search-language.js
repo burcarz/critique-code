@@ -16,11 +16,9 @@ async function getPostByLanguage(language) { // change this function tomorrow to
         console.log('Failed to find tag with that language');
     }
 }
-window.onload = function() {
-searchform = document.querySelector('search-form');
-searchForm.addEventListener('submit', (e) => {
+
+document.querySelector('.search-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const searchText = document.querySelector('input[name="search"]').value;
     getPostByLanguage(searchText);
 });
-}
