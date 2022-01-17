@@ -1,9 +1,9 @@
 <section class="endless-scroll">
-    <ul class="posts">
+    <div class="posts-timeline">
         {{#each posts as |post|}}
-        <li>
+        <div class="post-container">
             {{> post-info post}}
-        </li>
+        </div>
         {{/each}}
-    </ul>
+    </div>
 </section>

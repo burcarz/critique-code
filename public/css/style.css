@@ -65,6 +65,14 @@ header {
     justify-content: center;
 }
 
+pre {
+    margin: 0;
+}
+
+code:hover {
+    opacity: .9;
+}
+
 /* Search Bar Styles */
 .search-form {
     width: 100%;
@@ -111,7 +119,10 @@ header {
     background-image: url(https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
     background-size: cover;
     background-position: center;
-    /* border: outset rgb(154, 24, 71, .8); */
+    /* border: solid rgb(154, 24, 71, .8); */
+    box-shadow: 1px 2px 3px rgba(0,0,0,.2);
+    -webkit-box-reflect: below 0px linear-gradient(to bottom, 
+    rgba(0,0,0,0.0), rgba(0,0,0,0.05));
 }
 
 .h-title {
@@ -322,9 +333,9 @@ a:hover::before {
 }
 
 .title a {
-    background: rgb(120, 33, 217, .5);
+    /* background: rgb(120, 33, 217, .5); */
     padding: 4px 8px;
-    border-radius: 3px;
+    border-radius: 15px;
     font-size: 12px;
     font-weight: bold;
 }
@@ -342,6 +353,10 @@ a:hover::before {
     opacity: .8;
     margin-top: 16px;
     font-size: 12px;
+}
+
+.tags {
+    float: right;
 }
 
 .hidden {
