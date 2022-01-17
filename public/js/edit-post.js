@@ -4,17 +4,21 @@ async function editPostHandler(event) {
 
     alert("in editPostHandler");
     const title = document.querySelector('input[name="post-title"').value;
-    const body = document.querySelector('textarea[name="post-body"]').value;
+    const post_body = document.querySelector('textarea[name="post-body"]').value;
 
     alert( title);
-    alert( body);
+    alert( post_body);
+    const tag_genre = 'Funny';
+    const tag_language = 'Java';
 
     if(title && body) {
-        const response = await fetch('api/posts', {
+        const response = await fetch('../api/posts', {
             method: 'PUT',
             body: JSON.stringify({
                 title,
-                body
+                post_body,
+                tag_genre,
+                tag_language,
             }),
             headers: {
                 'Content-Type': 'application/json'
@@ -23,6 +27,7 @@ async function editPostHandler(event) {
 
         if (response.ok) {
             console.log('success');
+            document.location.replace('/profile')
         } else {
             console.log('failed to edit post');
         }
