@@ -17,25 +17,25 @@ body {
 h1 {
     font-size: 34px;
     font-weight: 400;
-    color: #212DD9;
+    color: white
 }
 
 h2 {
     font-size: 30px;
     font-weight: 500px;
-    color: #2B3042
+    color: white
 }
 
 h3 {
     font-size: 26px;
     font-weight: normal;
-    color: #7821D9
+    color: white
 }
 
 h4 {
     font-size: 14px;
     font-weight: 700;
-    color: #C225F8
+    color: white
 }
 
 p {
@@ -253,5 +253,13 @@ a:hover::before {
 
 ul {
     list-style-type: none;
+}
+
+.com-text {
+    color: white;
+}
+
+.user-attach {
+    color: white;
 }
 /* end timeline styles */
