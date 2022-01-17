@@ -8,6 +8,9 @@
     <div class="title">
         <a href="/post/{{id}}" target="blank">{{title}}</a>
         <span>Posted by: {{user.username}}</span>
+        <span>{{format_date created_at}} ago</span>
+        <span class="tags"><a href="/tag/{{tag_language}}">{{tag_language}}</a>
+        <a href="/{{tag_genre}}">{{tag_genre}}</a></span>
     </div>
     <div class="body">
         <pre>
@@ -17,7 +20,7 @@
         </pre>
     </div>
     <div class="info">
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
         <span class="hidden" id="id-val">{{id}}</span>
         <span class="vote-val" id="vote-val" value="{{vote_count}}">{{vote_count}}</span>
         <span class="vote-val"> votes</span>

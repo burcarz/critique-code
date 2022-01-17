@@ -65,6 +65,14 @@ header {
     justify-content: center;
 }
 
+pre {
+    margin: 0;
+}
+
+code:hover {
+    opacity: .9;
+}
+
 /* Search Bar Styles */
 .search-form {
     width: 100%;
@@ -325,9 +333,9 @@ a:hover::before {
 }
 
 .title a {
-    background: rgb(120, 33, 217, .5);
+    /* background: rgb(120, 33, 217, .5); */
     padding: 4px 8px;
-    border-radius: 3px;
+    border-radius: 15px;
     font-size: 12px;
     font-weight: bold;
 }
@@ -345,6 +353,10 @@ a:hover::before {
     opacity: .8;
     margin-top: 16px;
     font-size: 12px;
+}
+
+.tags {
+    float: right;
 }
 
 .hidden {

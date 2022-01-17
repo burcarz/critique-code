@@ -11,7 +11,6 @@ const router = require('express').Router();
 router.get('/', (req, res) => {
    //res.render('homepage');
     Post.findAll({
-
          //Query config
          attributes: [
             'id', 
