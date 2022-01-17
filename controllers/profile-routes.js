@@ -8,6 +8,11 @@ const withAuth = require('../utils/auth');
 
 // GET /dashboard/ gets all posts while logged in
 router.get('/', (req,res) => {
+   // if they are  not logged in redirect to a homepage if one exists.
+   if (!req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
 
   Post.findAll({
       where: {
@@ -61,14 +66,14 @@ router.get('/', (req,res) => {
       ]
     })
       .then(dbPostData => {
+        console.table(dbPostData);
          
         // serialize data before passing to template
         const posts = dbPostData.map(post => post.get({ plain: true }));
    
         // Render dashboard with posts
         res.render('profile', { posts, loggedIn: true });
-       console.log(posts)
-      
+    
       })
       .catch(err => {
         console.log(err);
@@ -77,13 +82,13 @@ router.get('/', (req,res) => {
 });
 
 
-// GET /signup Check to see if logged in, if not send to signup page
+// GET /create-post  Check to see if logged in, if not send to home page
 router.get('/create-post',withAuth, (req, res)=> {
-  // if they are logged in redirect to a homepage if one exists.
-  // if (req.session.loggedIn) {
-  //     res.redirect('/');
-  //     return;
-  // }
+  // if they are  not logged in redirect to a homepage if one exists.
+  if (!req.session.loggedIn) {
+      res.redirect('/');
+      return;
+  }
   // no variables need to be passed so only the page name
   res.render('create-post');
 });
