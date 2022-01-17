@@ -3,7 +3,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
-
+// POST /funny     Get all funny tagged 
 router.get('/', (req,res) => {
 
     // GET /profile   Find all posts?  Not sure what we want on this page

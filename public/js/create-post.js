@@ -1,3 +1,4 @@
+// function to create a new post
 async function createPostHandler(event) {
     event.preventDefault();
     alert('In createPostHandler');

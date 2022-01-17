@@ -89,5 +89,83 @@ router.get('/create-post', (req, res)=> {
 });
 
 
+// POST /profile/edit/1   logged in to edit posts 
+// TODO: fix when login works
+//router.get('/edit/:id',withAuth, (req,res) => {
+router.get('/edit/:id', (req,res) => {
+  Post.findOne({
+      where: {
+          id:req.params.id
+        // user_id = 1
+      },
+
+      attributes: [
+         
+          'id',
+          'title',
+          'post_body',
+          'vote_count',
+          'user_id',
+          'tag_genre',
+          'tag_language',
+          'created_at'
+      ],
+      include: [
+            // include comment model here:
+            {
+              // comment model has the user model itself so it can attach the username to the comment
+              model: Comment, 
+              attributes: [
+        
+                'id',
+                'comment_body',
+                'user_id',
+                'post_id', 
+                'created_at'
+              ],
+              include: {
+
+                  model: User, 
+                  attributes: [
+                
+                    'id',
+                    'username',
+                    'email',
+                    'password'  
+                  ]
+              }
+          },
+          {
+              model: User,
+              attributes: [
+               
+                'id',
+                'username',
+                'email',
+                'password'  
+              ]
+          }
+      ]
+  })
+  .then(dbPostData => {
+      if(!dbPostData) {
+          res.status(404).json({ message: 'No post found wit this id'});
+          return;
+      }
+     // res.json(dbPostData);
+     const post = dbPostData.get({ plain: true});
+
+     res.render('edit-post', {
+         post, 
+         loggedIn: true
+     });
+  })
+  .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+  });
+});
+
+
 
 module.exports = router;
