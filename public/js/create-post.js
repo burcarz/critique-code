@@ -34,7 +34,7 @@ async function createPostHandler(event) {
 
         if (response.ok) {
             console.log('success');
-            document.location.replace('/profile')
+            document.location.replace('/profile');
         } else {
             console.log('failed to create post');
         }
