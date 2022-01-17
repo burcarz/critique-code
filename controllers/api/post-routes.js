@@ -3,6 +3,7 @@ const router = require('express').Router();
 // to join them together
 const { Post, User, Comment }  = require('../../models');
 
+const withAuth = require('../../utils/auth');
 // // Search for Advice tag_genre and rank DESC
 router.get('/adviceranked', (req, res) => {
   Post.findAll({
@@ -349,11 +350,10 @@ router.get('/tag/:tag_language', (req, res) => {
 
  
 // PUT /api/post/1       Update a post by ID
-  router.put('/:id', (req, res) => {
+  router.put('/:id', withAuth, (req, res) => {
     Post.update(
       {
         title: req.body.title,
-        //TODO: Need post body?
         post_body: req.body.post_body
   
       },
@@ -377,7 +377,7 @@ router.get('/tag/:tag_language', (req, res) => {
   });
 
 // TEST VOTE ROUTE  _____ CHANGES VOTE COUNT
-router.put('/vote/:id', (req, res) => {
+router.put('/vote/:id',withAuth, (req, res) => {
   Post.increment(
     'vote_count',
     {

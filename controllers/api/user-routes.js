@@ -2,6 +2,8 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
+const withAuth = require('../../utils/auth');
+
 // GET /api/users findAll function
 router.get('/', (req, res) => {
     
@@ -68,7 +70,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/users create a new post
-router.post('/', (req, res) => {
+router.post('/',withAuth, (req, res) => {
    // TODO: will need to adjust
   User.create({
     username: req.body.username,
@@ -139,7 +141,7 @@ router.post('/logout', (req, res)=> {
 });
 
 // PUT /api/users/1  Update a user's info by id
-router.put('/:id', (req, res) => {
+router.put('/:id',withAuth, (req, res) => {
  
   // if req.body has exact key/value pairs to match the model, you can just use `req.body` instead
   User.update(req.body, {
@@ -162,7 +164,7 @@ router.put('/:id', (req, res) => {
 
 
 // DELETE /api/users/1 Delete post by ID
-router.delete('/:id', (req, res) => {
+router.delete('/:id',withAuth,  (req, res) => {
     User.destroy({
         where: {
           id: req.params.id

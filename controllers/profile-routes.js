@@ -12,10 +12,10 @@ router.get('/', (req,res) => {
   Post.findAll({
       where: {
         // use the ID from the session
-       // user_id: req.session.user_id
+        user_id: req.session.user_id
        // TODO: going to have to hardcode until login is working right
       // id: 1
-      user_id: 1
+     // user_id: 1
       },
       attributes: [
         'id',
@@ -78,7 +78,7 @@ router.get('/', (req,res) => {
 
 
 // GET /signup Check to see if logged in, if not send to signup page
-router.get('/create-post', (req, res)=> {
+router.get('/create-post',withAuth, (req, res)=> {
   // if they are logged in redirect to a homepage if one exists.
   // if (req.session.loggedIn) {
   //     res.redirect('/');
@@ -92,7 +92,7 @@ router.get('/create-post', (req, res)=> {
 // POST /profile/edit/1   logged in to edit posts 
 // TODO: fix when login works
 //router.get('/edit/:id',withAuth, (req,res) => {
-router.get('/edit/:id', (req,res) => {
+router.get('/edit/:id',withAuth,  (req,res) => {
   Post.findOne({
       where: {
           id:req.params.id
