@@ -10,37 +10,46 @@
         <link rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <link rel="stylesheet" href="css/modal_style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&family=VT323&display=swap" rel="stylesheet">
       </head>
 
     <body>
         <section class="top">
-        <div class= "auth-btns">
+        <div class="blur-head">
+        <div class= "auth-btn-container">
             {{#if loggedIn}}
-        <button id="logout-btn">Log Out</button>
+        <button id="logout-btn" class="auth-btns">Log Out</button>
             {{else}}
-        <button id="signup-btn">Sign Up</button>
-        <button id="login-btn">Log In</button>
+        <button id="login-btn" class="auth-btns">Log In/ <span>Sign Up</span></button>
             {{/if}}
         </div>
-        <header class="h-title">
+        <header class="h-title-container">
             <a href="/">
-            <h1  class="title">Critique<span id="h-span">Code</span></h1>
+            <h1  class="h-title">Critique <span class="h-span" id="h-span">&lt;Code&gt;</span></h1>
             </a>
         </header>
         <div class="nav-section">
             <div class="nav-bar">
                 <nav class="links">
-                <a href="/funny">FUNNY CODE</a>
-                <a href="/advice">BAD CODE</a>
+                <a class="funny" href="/funny">Intentionally Bad</a>
+                <a class="advice" href="/advice">Accidentally Bad</a>
                 {{#if loggedIn}}
-                <a href="/profile">PROFILE</a>
+                <a class="profile" href="/profile">Profile</a>
                 {{/if}}
                 </nav>
             </div>
+            <div class="search-bar">
             <form class="search-form">
-            <input id="language-search" type="text" placeholder="Search" name="search">
-            <button type="submit" id="search-btn">Search</button>
+            <input class="search-term" id="language-search" type="text" placeholder="What language do you want to see?" name="search">
+            <button type="submit" class="search-button" id="search-btn">
+                <i class="fa fa-search"></i>
+            </button>
             </form>
+            </div>
+        </div>
         </div>
         </section>
         <main>
@@ -86,7 +95,6 @@
         </footer>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>        <script></script>
         <script src="/js/syntax-highlight.js"></script>
-        {{!-- <script src="/js/form-handling.js"></script> --}}
         <script src="/js/search-language.js"></script>
         <script src="/js/vote.js"></script>
         {{#if loggedIn}}

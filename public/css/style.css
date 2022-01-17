@@ -1,6 +1,18 @@
 :root {
 --max-width: 758px;
 --max-height: 420px;
+/* COLORS */
+--white: #e9e9e9;
+--gray: #333;
+--blue: #9a1847;
+--lightblue: #D92365;
+
+/* RADII */
+--button-radius: 0.7rem;
+
+/* SIZES */
+--max-width: 758px;
+--max-height: 420px;
 }
 
 * {
@@ -9,7 +21,7 @@
 }
 
 body {
-    background-color: #1e1e2f;
+    background-image: linear-gradient(#1e1e2f, #1f2e2f);
     display: inline;
     letter-spacing: .5px;
 }
@@ -17,7 +29,7 @@ body {
 h1 {
     font-size: 34px;
     font-weight: 400;
-    color: white
+    color: #e9e9e9;
 }
 
 h2 {
@@ -53,19 +65,78 @@ header {
     justify-content: center;
 }
 
+/* Search Bar Styles */
+.search-form {
+    width: 100%;
+    position: relative;
+    display: flex;
+}
+
+.search-term {
+    width: 100%;
+    border: 3px solid #9a1847;
+    border-right: none;
+    height: 36px;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+.search-term:focus {
+    color: #333
+}
+
+.search-button {
+    width: 40px;
+    height: 36px;
+    border: 1px solid #9a1847;
+    background: #9a1847;
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.search-bar {
+    width: 20%;
+    position: absolute;
+    top: 37px;
+    left: 12%;
+    transform: translate(-50%, -80%);
+}
+
 .top {
     background-image: url(https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
     background-size: cover;
     background-position: center;
+    /* border: outset rgb(154, 24, 71, .8); */
 }
 
 .h-title {
+    font-size: 64px;
     position: sticky;
+    margin: 0;
+    padding: 0;
+    font-family: 'Neonderthaw', cursive;
 }
+
 /* header span style */
-#h-span {
-    font-size: 34px;
+.h-span {
+    font-size: 64px;
     font-weight: 900;
+    font-family: 'VT323', monospace;
+}
+
+.blur-head {
+    backdrop-filter: blur(3px);
+}
+
+.links {
+    font-size: 14px;
+    font-weight: 900;
+    padding: 15px;
 }
 
 /* .nav-section {
@@ -74,25 +145,39 @@ header {
 
 /* link styles and animation */
 a {
-    color: #000;
+    color: #BFBDB8;
     position: relative;
     text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+.funny {
+    margin: 30px;
+}
+
+.advice {
+    margin: 30px;
+}
+
+.profile {
+    margin: 30px;
 }
 
 a::before {
-    background: hsl(45 100% 70%);
+    background: rgb(154, 24, 71, .7);
     content: "";
     inset: 0;
     position: absolute;
     transform: scaleX(0);
-    transform-origin: top;
+    transform-origin: right;
+    border-radius: 20px;
     transition: transform 0.5s ease-in-out;
     z-index: -1;
 }
 
 a:hover::before {
     transform: scaleX(1);
-    transform-origin: top;
+    transform-origin: left;
 }
 
 .nav-bar {
@@ -107,19 +192,34 @@ a:hover::before {
 }
 
 /* signup/login buttons */
+.auth-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 85%;
+    padding-right: 10px;
+    position: relative;
+}
+
 .auth-btns {
-    background-color: #888;
-    border: 1px solid #2B3042;
-    color: white;
-    padding: 10px 24px;
-    cursor: pointer;
-    float: right;
-    margin: 10px;
+    background-color: var(--blue);
+	background-image: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);
+	border-radius: 20px;
+	border: 1px solid var(--blue);
+	color: var(--white);
+	cursor: pointer;
+    font-size: 0.8rem;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+	padding: 0.9rem 4rem;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
     position: sticky;
-    top: 0;
-    right: 0;
-    width: 10%;
-    z-index: 100;
+    margin-top: 10px;
+}
+
+.auth-btns:hover {
+    box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+    0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
 }
  /* timeline styles */
 .top-posts {
@@ -211,7 +311,7 @@ a:hover::before {
 }
 /* VOTING BUTTONS END */
 .post-body {
-    background: #2B3042;
+    background-image: linear-gradient(rgb(43, 48, 66, 1), rgb(34, 34, 34, .2));
     border-radius: 3px;
     padding: 20px 20px 15px;
     box-shadow: 1px 3px 9px rgba(0,0,0, .1);
@@ -222,7 +322,7 @@ a:hover::before {
 }
 
 .title a {
-    background: #7821D9;
+    background: rgb(120, 33, 217, .5);
     padding: 4px 8px;
     border-radius: 3px;
     font-size: 12px;
@@ -232,7 +332,7 @@ a:hover::before {
 .title span {
     padding: 4px 8px;
     font-size: 10px;
-    font-style: italic;
+    font-style: bold;
     opacity: .8;
 }
 
@@ -242,6 +342,10 @@ a:hover::before {
     opacity: .8;
     margin-top: 16px;
     font-size: 12px;
+}
+
+.hidden {
+    opacity: 0;
 }
 
 .vote-val {
