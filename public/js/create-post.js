@@ -1,14 +1,12 @@
 // function to create a new post
 async function createPostHandler(event) {
     event.preventDefault();
-    alert('In createPostHandler');
+    
 
     const title = document.querySelector('input[name="post-title"').value;
     const post_body = document.querySelector('textarea[name="post-body"]').value;
 
-    alert( title);
-    alert(post_body);
-
+    //TODO: Fix hardcoded
     const tag_genre = 'Funny';
     const tag_language = 'Java';
 
@@ -21,11 +19,6 @@ async function createPostHandler(event) {
                 post_body,
                 tag_genre,
                 tag_language,
-               
-                
-
-                //TODO: login needs to work 
-                //user_id: 1
             }),
             headers: {
                 'Content-Type': 'application/json'
