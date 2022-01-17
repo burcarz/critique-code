@@ -370,7 +370,7 @@ ul {
 }
 
 .overlay {
-	background-color: #212DD9;
+	/* background-color: #212DD9; */
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
