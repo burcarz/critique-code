@@ -9,7 +9,7 @@
 const withAuth = (req, res, next) => {
     if(!req.session.user_id) {
         // not logged in therefore direct to login
-        res.redirect('/login');
+        res.redirect('/');
     } else {
         // if logged in move to next function
         next();
