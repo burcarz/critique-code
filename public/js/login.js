@@ -91,7 +91,6 @@ async function loginFormHandler(event) {
     }
 }
 
-window.onload = function() {
-    document.querySelector('#signup-btn').addEventListener('click', btnClickHandler);
-    document.querySelector('#login-btn').addEventListener('click', btnClickHandler);
-}
+
+// document.querySelector('#signup-btn').addEventListener('click', btnClickHandler);
+document.querySelector('#login-btn').addEventListener('click', btnClickHandler);
