@@ -1,6 +1,7 @@
 // retrieves post via tag_language
 
-async function getPostByLanguage(language) { // change this function tomorrow to work with the url's that Zach made in homeroutes
+// temp for MVP 
+async function getPostByLanguage(language) { 
    if(window.location.href.indexOf('tag') > -1) {
        const url = window.location.href;
        const urlArr = url.split('/');
