@@ -1,0 +1,57 @@
+ <button id="post-btn" class="create-post"></button>
+ 
+ <div id="create-post-modal" class="post-modal">
+    <div class="post-modal-content postContainer right-panel-active">
+        <span class="close">&times;</span>
+        <!-- sign up -->
+        <div class="container_form container_signup">
+        <form action="#" class="form">
+            <h2 class="form_title">Create a new post</h2>
+            <input type="text" class="input" placeholder="Title"/>
+            <textarea type="text" class="input" placeholder="write/paste your bad code here!"></textarea>
+            <button type="submit" class="auth-button">Submit</button>
+        </form>
+        </div>
+        <!-- login -->
+        <div class="container_form container_signin">
+        <form action="#" class='form'>
+            <div class="drop-up">
+                <button class="post-btns selected">
+                    Select a language
+                </button>
+            <div class="options-up">
+                    <button class="post-btns">Javascript</button>
+                    <button class="post-btns">CSS</button>
+                    <button class="post-btns">Java</button>
+                    <button class="post-btns">C++</button>
+                    <button class="post-btns">C#</button>
+                    <button class="post-btns">Python</button>
+                    <button class="post-btns">PHP</button>
+            </div>
+            </div>
+            <div class="drop-down">
+                <button class="post-btns selected">
+                    Select a post-type
+                </button>
+            <div class="options">
+                    <button class="post-btns">Advice</button>
+                    <button class="post-btns">Funny</button>
+            </div>
+            </div>
+        </form>
+        </div>
+        <!-- overlay -->
+        <div class="container_overlay">
+            <div class="overlay">
+                <div class="overlay_panel overlay_left">
+                    <button class="auth-button" id="details-btn">The Deets</button>
+                </div>
+                <div class="overlay_panel overlay_right">
+                    <button class="auth-button" id="body-btn">The Meat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <script src="/js/form-handling.js"></script>
+        <script src="/js/create-post.js"></script>
