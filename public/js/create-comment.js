@@ -23,7 +23,7 @@ async function createCommentHandler(event) {
         if(response.ok) {
             console.log(comment_body);
             console.log(post_id);
-            //document.location.reload();
+            document.location.reload();
         } else {
             console.log('failed to create comment');
         }

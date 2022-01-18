@@ -34,6 +34,4 @@ async function createPostHandler(event) {
     }
     
 }
-window.onload = function() {
-document.querySelector('#post-submit').addEventListener('submit', createPostHandler);
-}
+document.querySelector('.new-post-form').addEventListener('submit', createPostHandler);
