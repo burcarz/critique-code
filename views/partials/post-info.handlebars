@@ -1,5 +1,5 @@
 <div class="up-vote-icon" id="vote-btn">
-<input type="checkbox" id="upvote-control" />
+<input type="checkbox" id="upvote-control" post_id="{{id}}"/>
 <label class="btn" for="upvote-control">
 <i id="upvote-btn" for="upvote-control" class="fas fa-angle-up"></i>
 </label>
@@ -21,7 +21,7 @@
     </div>
     <div class="info">
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-        <span class="hidden" id="id-val">{{id}}</span>
+        <span class="hidden id-val" id="id-val">{{id}}</span>
         <span class="vote-val" id="vote-val" value="{{vote_count}}">{{vote_count}}</span>
         <span class="vote-val"> votes</span>
     </div>
