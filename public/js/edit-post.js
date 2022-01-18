@@ -2,7 +2,6 @@
 async function editPostHandler(event) {
     event.preventDefault();
 
-    alert("in editPostHandler");
     const title = document.querySelector('input[name="post-title"').value;
     const post_body = document.querySelector('textarea[name="post-body"]').value;
 
