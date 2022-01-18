@@ -15,9 +15,6 @@ const voteClickHandler = async function(postId) {
     }
 }
 
-let vote = document.getElementsByClassName('up-vote-check');
-console.log(vote.value);
-
 window.onload = function() {
-    document.querySelector('.up-vote-icon').addEventListener('click', voteClickHandler)
+    document.querySelector('up-vote-icon').addEventListener('click', voteClickHandler)
 }

@@ -523,3 +523,10 @@ ul {
     overflow-x: hidden;
     padding-top: 20px;
 }
+
+.inner-side {
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}

@@ -1,4 +1,5 @@
-<div type="button" class="up-vote-icon" id="upvote-btn{{vote_count}}">
+<div aria-label="upvote" aria-pressed="false" 
+data-click-id="upvote" type="button" class="up-vote-icon" id="upvote-btn{{id}}">
 <input class="up-vote-check" type="checkbox" id="upvote-control" value="{{vote_count}}"/>
 <label class="btn" for="upvote-control">
 <i id="upvote-btn" for="upvote-control" class="fas fa-angle-up"></i>
@@ -21,7 +22,7 @@
     </div>
     <div class="info">
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-        <span class="hidden" id="id-val">{{id}}</span>
+        <span class="hidden" id="id-val" value="{{id}}">{{id}}</span>
         <span class="vote-val" id="vote-val" value="{{vote_count}}">{{vote_count}}</span>
         <span class="vote-val"> votes</span>
     </div>
