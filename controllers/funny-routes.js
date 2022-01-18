@@ -20,7 +20,9 @@ router.get('/', (req,res) => {
           'title',
           'post_body',
           'vote_count',
-          'created_at'
+          'created_at',
+          'tag_language',
+          'tag_genre'
        
         ],
         include: [
