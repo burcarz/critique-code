@@ -382,7 +382,9 @@ ul {
 .user-attach {
     color: white;
 }
+/* end timeline styles */
 
+/* CREATE POST MODAL */
 .options {
     display: none;
     position: absolute;
@@ -516,4 +518,17 @@ ul {
 		z-index: 5;
 	}
 }
-/* end timeline styles */
+/* END CREATE POST MODAL */
+
+/* SIDE BAR CONTENT */
+
+.sidebar-right {
+    background-color: #D92365;
+    width: 18%;
+    position: fixed;
+    /* z-index: 1; */
+    top: 25%;
+    right: 1%;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
