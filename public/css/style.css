@@ -442,7 +442,7 @@ ul {
     top: 20%;
     width: 80%;
     height: 80%;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .post-modal-content {
@@ -456,6 +456,13 @@ ul {
 	display: grid;
 	height: 100vh;
 	place-items: center;
+}
+
+#close-post {
+    color: #e9e9e9;
+    left: 10%;
+    top: 10%;
+    cursor: pointer;
 }
 
 .postContainer {

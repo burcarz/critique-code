@@ -19,6 +19,9 @@ async function createPostClick(event) {
     document.getElementsByClassName('close')[0].addEventListener('click', function() {
         createModal.style.display = "none"
     });
+    document.getElementById('close-post').addEventListener('click', function() {
+        createModal.style.display = "none";
+    });
     window.onclick = function(event) {
         let createModal = document.getElementById('create-post-modal');
         if (event.target == createModal) {

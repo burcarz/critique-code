@@ -8,13 +8,13 @@ async function btnClickHandler(event) {
 	const secondForm = document.getElementById("form2");
 	const container = document.querySelector(".container");
 
+
     let modal = document.getElementById('signup-modal');
     modal.style.display = "block";
 
     document.getElementsByClassName('close')[0].addEventListener('click', function() {
         modal.style.display = "none"
     });
-
     window.onclick = function(event) {
         let modal = document.getElementById('signup-modal');
         if (event.target == modal) {
