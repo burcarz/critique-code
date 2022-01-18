@@ -1,8 +1,6 @@
-const voteClickHandler = async function(event) {
-    event.preventDefault();
-    const postId = document.getElementById('id-val').innerHTML;
-
-    // console.log(postId);
+const voteClickHandler = async function(postId) {
+    
+    console.log(postId);
     const response = await fetch(`/api/posts/vote/${postId}`, {
         method: 'PUT',
         headers: {
@@ -17,6 +15,9 @@ const voteClickHandler = async function(event) {
     }
 }
 
+let vote = document.getElementsByClassName('up-vote-check');
+console.log(vote.value);
+
 window.onload = function() {
-    document.querySelector('up-vote-icon').addEventListener('click', voteClickHandler);
+    document.querySelector('.up-vote-icon').addEventListener('click', voteClickHandler)
 }

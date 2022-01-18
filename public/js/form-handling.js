@@ -86,6 +86,5 @@ async function createPostHandler(genre, lang) {
     
 }
 
-window.onload = function() {
+
 document.querySelector('#post-btn').addEventListener('click', createPostClick);
-}

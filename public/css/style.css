@@ -305,21 +305,12 @@ a:hover::before {
     display: none;
 }
 
-#upvote-control:checked + label > i{
-    color: blue;
-}
-
-.down-vote-icon:hover {
-    color: red;
-    cursor: pointer;
-}
-
 #downvote-control {
     display: none;
 }
-
-#downvote-control:checked + label > i{
+.down-vote-icon:hover {
     color: red;
+    cursor: pointer;
 }
 /* VOTING BUTTONS END */
 .post-body {
