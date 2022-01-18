@@ -1,26 +1,25 @@
 // retrieves post via tag_language
 
 async function getPostByLanguage(language) { // change this function tomorrow to work with the url's that Zach made in homeroutes
-    const response = await fetch('api/posts/tag/' + language, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
+   if(window.location.href.indexOf('tag') > -1) {
+       const url = window.location.href;
+       const urlArr = url.split('/');
+       urlArr.pop();
+       urlArr.push(language);
+       const newUrl = urlArr.join('/')
 
+       console.log(newUrl);
+       window.location = newUrl;
+   } else {
+       const url = window.location.href;
+       const newUrl = url + 'tag/' + language;
 
-    if(response.ok) {
-        console.log('success');
-        console.log(response.json());
-    } else {
-        console.log('Failed to find tag with that language');
-    }
+       window.location = newUrl;
+   }
 }
-window.onload = function() {
-searchform = document.querySelector('search-form');
-searchForm.addEventListener('submit', (e) => {
+
+document.querySelector('.search-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const searchText = document.querySelector('input[name="search"]').value;
     getPostByLanguage(searchText);
 });
-}
