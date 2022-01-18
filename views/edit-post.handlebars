@@ -1,29 +1,36 @@
 
-<article>
-  <a href="/profile"> &larr; Back to profile</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
+  <section class="endless-scroll">
+    <section class="post-body">
     <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
+    <a href="/profile"> &larr; Back to profile <span><h4>Edit Post</h4></span></a>
+    </div>
+    <div class="posts-timeline">
+    <div class="title">
+        <input name="post-title" type="text" value="{{post.title}}" />
+        <span class="tags"><a href="/tag/{{tag_language}}">{{tag_language}}</a>
+        <a href="/{{tag_genre}}">{{tag_genre}}</a></span>
+    </div>
+    <div class="body">
       <textarea name="post-body" id="post-body"> {{post.post_body}}</textarea>
     </div>
-  
-  </form>
-</article>
+    <div class="info">
+        <div id="edit-post-btn-holder"></div>
+        <button id="my-btn"  type="submit" class="update-post-btn">Update</button>
+        <button id="my-btn" type="button" class="delete-post-btn">Delete</button>
+        <div>
+        <p>Comments on this post</p>
+        </div>
+        </div>
+    </div>
+      </section>
+    </div>
+  </section>
 
-  <div id="edit-post-btn-holder">
-     <button id="my-btn"  type="submit" class="update-post-btn">Update</button>
-     <button id="my-btn" type="button" class="delete-post-btn">Delete</button>
+<section class="endless-scroll">
+  <div class="posts-timeline">
+    {{> comments post.comments}} 
   </div>
-
-
-<h3> Comments on this Post:</h3>
-</br>
-{{> comments post.comments}} 
-
-
+</section>
 
  <script src="/js/edit-post.js"></script>
 

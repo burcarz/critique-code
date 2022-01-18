@@ -305,21 +305,12 @@ a:hover::before {
     display: none;
 }
 
-#upvote-control:checked + label > i{
-    color: blue;
-}
-
-.down-vote-icon:hover {
-    color: red;
-    cursor: pointer;
-}
-
 #downvote-control {
     display: none;
 }
-
-#downvote-control:checked + label > i{
+.down-vote-icon:hover {
     color: red;
+    cursor: pointer;
 }
 /* VOTING BUTTONS END */
 .post-body {
@@ -382,7 +373,9 @@ ul {
 .user-attach {
     color: white;
 }
+/* end timeline styles */
 
+/* CREATE POST MODAL */
 .options {
     display: none;
     position: absolute;
@@ -516,4 +509,34 @@ ul {
 		z-index: 5;
 	}
 }
-/* end timeline styles */
+/* END CREATE POST MODAL */
+
+/* SIDE BAR CONTENT */
+
+.sidebar-right {
+    background-color: #D92365;
+    width: 18%;
+    position: fixed;
+    /* z-index: 1; */
+    top: 25%;
+    right: 1%;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.inner-side {
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-icon {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+textarea {
+    width: 80%;
+    height: 150px;
+}

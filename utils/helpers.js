@@ -60,6 +60,14 @@ module.exports = {
           return `${word}s`;
         }
         return word;
+    },
+    get_comments: (posts) => {
+      let totalComments = 0;
+      for (i = 0; i < posts.length; i++) {
+        let commentAmt = posts[i].comments.length;
+        totalComments += commentAmt;
+      }
+      return totalComments;
     }
 }
 
