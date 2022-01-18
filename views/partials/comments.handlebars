@@ -1,13 +1,19 @@
+<section class="post-body">
+    <h4>Comments on this post</h4>
+</section>
+
 <div class="comments">
     {{#each this}}
+    <section class="post-body">
     <section class="comment">
-        <div class="user-attach">
+        <div class="title">
           
             {{user.username}}
         </div>
-        <div class="com-text">
+        <div class="body">
             {{comment_body}}
         </div>
+    </section>
     </section>
     {{/each}}
 </div>

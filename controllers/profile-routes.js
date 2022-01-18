@@ -13,7 +13,6 @@ router.get('/', (req,res) => {
     res.redirect('/');
     return;
   }
-
   Post.findAll({
       where: {
         // use the ID from the session
