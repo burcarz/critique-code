@@ -10,8 +10,13 @@ async function editPostHandler(event) {
     const tag_genre = 'Funny';
     const tag_language = 'Java';
 
+    // get id number   dashboard/edit/21     
+    const id = window.location.toString().split('/') [
+        window.location.toString().split('/').length -1
+    ];
+
     if(title && post_body) {
-        const response = await fetch('../api/posts/${id}', {
+        const response = await fetch(`/api/posts/${id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 title,
