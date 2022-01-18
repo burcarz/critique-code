@@ -18,9 +18,7 @@ router.get('/', (req,res) => {
       where: {
         // use the ID from the session
         user_id: req.session.user_id
-       // TODO: going to have to hardcode until login is working right
-      // id: 1
-     // user_id: 1
+    
       },
       attributes: [
         'id',
@@ -66,7 +64,7 @@ router.get('/', (req,res) => {
       ]
     })
       .then(dbPostData => {
-        console.table(dbPostData);
+       // console.table(dbPostData);
          
         // serialize data before passing to template
         const posts = dbPostData.map(post => post.get({ plain: true }));
@@ -106,12 +104,11 @@ router.get('/edit-post',withAuth, (req, res)=> {
 });
 
 // POST /profile/edit/1   logged in to edit posts 
-// TODO: fix when login works
+
 router.get('/edit/:id',withAuth,  (req,res) => {
   Post.findOne({
       where: {
           id:req.params.id
-        // user_id = 1
       },
 
       attributes: [
@@ -167,7 +164,7 @@ router.get('/edit/:id',withAuth,  (req,res) => {
           res.status(404).json({ message: 'No post found wit this id'});
           return;
       }
-     // res.json(dbPostData);
+   
      const post = dbPostData.get({ plain: true});
 
      res.render('edit-post', {
