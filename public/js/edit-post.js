@@ -6,13 +6,17 @@ async function editPostHandler(event) {
     const title = document.querySelector('input[name="post-title"').value;
     const post_body = document.querySelector('textarea[name="post-body"]').value;
 
-    alert( title);
-    alert( post_body);
+    //TODO: fix hardcoded
     const tag_genre = 'Funny';
     const tag_language = 'Java';
 
-    if(title && body) {
-        const response = await fetch('../api/posts', {
+    // get id number   dashboard/edit/21     
+    const id = window.location.toString().split('/') [
+        window.location.toString().split('/').length -1
+    ];
+
+    if(title && post_body) {
+        const response = await fetch(`/api/posts/${id}`, {
             method: 'PUT',
             body: JSON.stringify({
                 title,

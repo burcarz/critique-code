@@ -332,7 +332,7 @@ router.get('/tag/:tag_language', (req, res) => {
 });
 
 // POST /api/post/       CREATE POST
-  router.post('/', (req, res) => {
+  router.post('/',withAuth, (req, res) => {
     Post.create({
       
       title: req.body.title,
