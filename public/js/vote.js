@@ -1,7 +1,10 @@
-const voteClickHandler = async function(postId) {
+let id = [];
+
+const voteClickHandler = async function(id) {
     
-    console.log(postId);
-    const response = await fetch(`/api/posts/vote/${postId}`, {
+    console.log(id)
+    // console.log(postId);
+    const response = await fetch(`/api/posts/vote/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -15,6 +18,16 @@ const voteClickHandler = async function(postId) {
     }
 }
 
-window.onload = function() {
-    document.querySelector('up-vote-icon').addEventListener('click', voteClickHandler)
+let getVoteId = function() {
+    let elements = document.getElementsByClassName('up-vote-icon');
+    for (i = 0; i < elements.length; i++) {
+        // console.log(elements[i].id);
+        let postId = elements[i].id
+        // id.push(elements[i].id);
+        document.getElementById(`${postId}`).addEventListener('click', (e) => {
+            voteClickHandler(postId);
+        })
+    }
 }
+
+getVoteId();
