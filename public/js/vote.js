@@ -11,6 +11,7 @@ const voteClickHandler = async function(id) {
     } else {
         console.log('vote failed to seed')
     }
+    
     let voteText = document.querySelector(`#vote-val${id}`);
     let intVote = parseInt(voteText.innerHTML);
     intVote++;
@@ -23,7 +24,7 @@ let getVoteId = function() {
         let postId = e.target.id;
         let postIdArr = postId.split('-');
         voteClickHandler(postIdArr[1]);
-    })
+    });
 }
 
 getVoteId();
