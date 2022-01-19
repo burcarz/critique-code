@@ -58,12 +58,18 @@ User.init(
     // because mysql doesn't seem to like arrays, we are going to have to use JSON for storing the post id's that they user upvoted/downvoted
     upvoted_posts: {
       type: DataTypes.JSON,
-      allowNull: true
+      allowNull: false,
+      defaultValue: {
+        type: DataTypes.ARRAY
+      }
     },
 
     downvoted_posts: { // will attempt to get relationships/associations working tomorrow.
       type: DataTypes.JSON,
-      allowNull: true
+      allowNull: false,
+      defaultValue: {
+        type: DataTypes.ARRAY
+      }
     },
 
     password: {

@@ -404,6 +404,18 @@ router.put('/upvote/:id',withAuth, (req, res) => {
     console.log(err);
     res.status(500).json(err);
   })
+  User.update(
+    {
+      upvoted_posts: req.params.id
+    },
+    {
+      where: {
+        id: req.params.id
+      }
+    }
+  ).then(dbUserData => {
+    res.json(dbUserData);
+  })
 })
 
 router.put('/downvote/:id',withAuth, (req, res) => {
