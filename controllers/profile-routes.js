@@ -53,6 +53,7 @@ router.get('/:id', (req,res) => {
            'username',
            'github',
            'bio',
+           'avatar',
            'email',
            'password' 
          ]
@@ -129,6 +130,7 @@ router.get('/', (req,res) => {
             'username',
             'github',
             'bio',
+            'avatar',
             'email',
             'password' 
           ]

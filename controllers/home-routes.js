@@ -38,13 +38,13 @@ router.get('/', (req, res) => {
                 // Attach the username to the comment
                 include: {
                   model:User,
-                  attributes: ['username', 'id']
+                  attributes: ['username', 'id', 'avatar']
                 }
   
               },
               {   // User who posted
                   model: User, 
-                  attributes: ['username', 'id']
+                  attributes: ['username', 'id', 'avatar']
               }
           ]
 
