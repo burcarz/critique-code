@@ -21,7 +21,8 @@ const voteClickHandler = async function(id) {
 let getVoteId = function() {
     document.querySelector('.posts-timeline').addEventListener('click', (e) => {
         let postId = e.target.id;
-        voteClickHandler(postId);
+        let postIdArr = postId.split('-');
+        voteClickHandler(postIdArr[1]);
     })
 }
 
