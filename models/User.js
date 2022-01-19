@@ -40,6 +40,16 @@ User.init(
       },
     },
 
+    title: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+
+    bio: {
+      type: DataTypes.TEXT,
+      allowNull: true
+    },
+
     // because mysql doesn't seem to like arrays, we are going to have to use JSON for storing the post id's that they user upvoted/downvoted
     upvoted_posts: {
       type: DataTypes.JSON,
