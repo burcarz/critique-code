@@ -266,7 +266,7 @@ const postdata = [
     title: 'Changing around some code, but I am not sure if this is correct in PHP. Not getting any errors, but the while loop is not working. Whats wrong?',
     post_body: `
     $result = $mysqli->query('SELECT * FROM students');
-    while ($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) 
       echo $row['name'] . '<br>';
     }`,
     vote_count: 45,
