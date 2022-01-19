@@ -382,8 +382,32 @@ router.get('/tag/:tag_language', (req, res) => {
   });
 
 // TEST VOTE ROUTE  _____ CHANGES VOTE COUNT
-router.put('/vote/:id',withAuth, (req, res) => {
+router.put('/upvote/:id',withAuth, (req, res) => {
   Post.increment(
+    'vote_count',
+    {
+      by: 1,
+      where: {
+        id: req.params.id
+      }
+    }
+  )
+  .then(dbPostData => {
+    console.log(dbPostData);
+    if (!dbPostData) {
+      res.json(404).json({ message: 'No post found with this id' });
+      return;
+    }
+    res.json(dbPostData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  })
+})
+
+router.put('/downvote/:id',withAuth, (req, res) => {
+  Post.decrement(
     'vote_count',
     {
       by: 1,
@@ -426,6 +450,7 @@ router.put('/vote/:id',withAuth, (req, res) => {
       });
   });
 
+  
 
   
 

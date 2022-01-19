@@ -1,11 +1,7 @@
 
 <section class="post-body">
-    <div aria-label="upvote" aria-pressed="false" 
-    data-click-id="upvote" type="button" class="up-vote-icon" id="{{id}}">
-    <input class="up-vote-check" type="checkbox" id="upvote-control" value="{{vote_count}}"/>
-    <label class="btn" for="upvote-control">
-    <button id="upvote-btn{{id}}" class="fas fa-angle-up"></button>
-    </label>
+    <div aria-label="upvote" aria-pressed="false" type="button" class="up-vote-icon">
+    <i type="upvote" id="upvote-{{id}}" class="fas fa-angle-up"></i>
     </div>
     <div class="title">
         <a href="/post/{{id}}" target="blank">{{title}}</a>
@@ -24,13 +20,11 @@
     <div class="info">
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
         <span class="hidden" id="id-val" value="{{id}}">{{id}}</span>
-        <span class="vote-val" id="vote-val" value="{{vote_count}}">{{vote_count}}</span>
+        <span class="vote-val" id="vote-val{{id}}" value="{{vote_count}}">{{vote_count}}</span>
         <span class="vote-val"> votes</span>
     </div>
     <div class="down-vote-icon">
-    <input type="checkbox" id="downvote-control" />
-    <label class="btn" for="downvote-control">
-    <i id="downvote-btn" for="downvote-control"  class="fas fa-angle-down"></i>
+    <i type="downvote" id="downvote-{{id}}" for="downvote-control"  class="fas fa-angle-down"></i>
     </label>
     </div>
 </section>
