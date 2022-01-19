@@ -1,9 +1,9 @@
-let id = [];
+
 
 const voteClickHandler = async function(id) {
     console.log(id)
     // console.log(postId);
-    const response = await fetch(`/api/posts/vote/${id}`, {
+    const response = await fetch(`/api/posts/vote/${postId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
