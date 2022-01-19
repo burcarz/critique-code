@@ -2,8 +2,9 @@ const { Post } = require('../models');
 
 const postdata = [
   {
-    title: 'Title 1',
-    post_body: `let customers = [
+    title: 'How is my JavaScript looking? Still getting used to the language.',
+    post_body: `
+    let customers = [
       { id: 0, name: 'paul' },
       { id: 1, name: 'jeff' },
       { id: 2, name: 'mary' }
@@ -17,8 +18,9 @@ const postdata = [
     tag_language: 'Javascript'
   },
   {
-    title: 'Title 2',
-    post_body: `String a = String.valueOf(2);   //integer to numeric string
+    title: 'Lol, funny Java. Slacking off at the office, just thought I should share.',
+    post_body: `
+    String a = String.valueOf(2);   //integer to numeric string
     int i = Integer.parseInt(a); //numeric string to an int`,
     vote_count: 0,
     user_id: 2,
@@ -26,24 +28,25 @@ const postdata = [
     tag_language: 'Java'
   },
   {
-    title: 'Title 3',
-    post_body: `.checkbox-symbol {
-      position: absolute;
-      width: 0;
-      height: 0;
-      pointer-events: none;
-      user-select: none;
+    title: 'Is this the proper way to style a checkbox? I feel I could be doing something better.',
+    post_body: `
+    .checkbox-symbol {
+        position: absolute;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+        user-select: none;
     }
     
     .checkbox-container {
-      box-sizing: border-box;
-      background: #ffffff;
-      color: #222;
-      height: 64px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-flow: row wrap;
+        box-sizing: border-box;
+        background: #ffffff;
+        color: #222;
+        height: 64px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row wrap;
     }
     `,
     vote_count: 27,
@@ -52,7 +55,7 @@ const postdata = [
     tag_language: 'CSS'
   },
   {
-    title: 'Title 4',
+    title: 'Literally an arrow. Not even an => just ->',
     post_body: `
     public static int[] filterNonUnique(int[] elements) {
       return Arrays.stream(elements)
@@ -66,27 +69,27 @@ const postdata = [
     tag_language: 'Java'
   },
   {
-    title: 'Title 5',
+    title: 'I come from a Java background, new to C# so I want to know if there is a better way of doing this :)',
     post_body: `
     // Enter "vmethod [Tab]", then...  
-public virtual void MyMethod()  {
-    throw new NotImplementedException();
-}
+    public virtual void MyMethod()  {
+        throw new NotImplementedException();
+    }
 
-// Enter "vmethod1 [Tab]", then...  
-public virtual void MyMethod(object arg)  {
-    throw new NotImplementedException();
-}
+    // Enter "vmethod1 [Tab]", then...  
+    public virtual void MyMethod(object arg)  {
+        throw new NotImplementedException();
+    }
 
-// Enter "vmethod2 [Tab]", then...  
-public virtual void MyMethod(object arg1, object arg2)  {
-    throw new NotImplementedException();
-}
+    // Enter "vmethod2 [Tab]", then...  
+    public virtual void MyMethod(object arg1, object arg2)  {
+        throw new NotImplementedException();
+    }
 
-// Enter "vmethod3 [Tab]", then...  
-public virtual void MyMethod(object arg1, object arg2, object arg3)  {
-    throw new NotImplementedException();
-}
+    // Enter "vmethod3 [Tab]", then...  
+    public virtual void MyMethod(object arg1, object arg2, object arg3)  {
+        throw new NotImplementedException();
+    }
     `,
     vote_count: 420,
     user_id: 5,
@@ -94,8 +97,9 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'C#'
   },
   {
-    title: 'Title 6',
-    post_body: `Cout width example
+    title: 'C++ pls...',
+    post_body: `
+    Cout width example
 
     //illustrates setting cout width 
     #include <iostream.h>
@@ -105,11 +109,11 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     int main()
     {
     
-    cout<<setw(20)<<"setw(20)"<<endl;
-    cout<<setw(10)<<"setw(10)"<<endl;
-    cout<<setw(15)<<"setw(15)"<<endl;
-    
-    return 0;
+      cout<<setw(20)<<"setw(20)"<<endl;
+      cout<<setw(10)<<"setw(10)"<<endl;
+      cout<<setw(15)<<"setw(15)"<<endl;
+      
+      return 0;
     }
     `,
     vote_count: 69,
@@ -118,8 +122,9 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'C++'
   },
   {
-    title: 'Title 7',
-    post_body: `$result = $mysqli->query('SELECT * FROM students');
+    title: 'Alright, so the CTO is forcing us to change from Python to a PHP backend and I have no idea what I am doing... Any advice for this?',
+    post_body: `
+    $result = $mysqli->query('SELECT * FROM students');
     while ($row = $result->fetch_assoc()) {
       echo $row['name'] . '<br>';
     }`,
@@ -129,9 +134,10 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'PHP'
   },
   {
-    title: 'Title 8',
-    post_body: `## Taking Two Integers as input
-    a,b = map(int,input().split())
+    title: 'What is the meaning of int here? I feel like this syntax is a bit funny.',
+    post_body: `
+    ## Taking Two Integers as input
+    a, b = map(int,input().split())
     print("a:",a)
     print("b:",b)
     
@@ -144,8 +150,9 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'Python'
   },
   {
-    title: 'Title 9',
-    post_body: `let customers = [
+    title: 'Storing an array of objects, but it feels wrong for actual customer data. Should I be doing something different?',
+    post_body: `
+    let customers = [
       { id: 0, name: 'paul' },
       { id: 1, name: 'jeff' },
       { id: 2, name: 'mary' }
@@ -159,7 +166,7 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'Javascript'
   },
   {
-    title: 'Title 10',
+    title: 'Commas... :^)',
     post_body: `<input type="file" name="my_image" accept="image/gif,image/jpeg,image/jpg,image/png">`,
     vote_count: 7,
     user_id: 10,
@@ -167,28 +174,29 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'HTML'
   },
   {
-    title: 'Title 11',
-    post_body: `.checkbox span:first-child {
-      position: relative;
-      flex: 0 0 18px;
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      transform: scale(1);
-      border: 1px solid #cccfdb;
-      transition: all 0.3s ease;
+    title: 'With the .checkbox span:first-child, we are getting the first-child as the class right? Just want some clarification',
+    post_body: `
+    .checkbox span:first-child {
+        position: relative;
+        flex: 0 0 18px;
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        transform: scale(1);
+        border: 1px solid #cccfdb;
+        transition: all 0.3s ease;
     }
     
     .checkbox span:first-child svg {
-      position: absolute;
-      top: 3px;
-      left: 2px;
-      fill: none;
-      stroke: #fff;
-      stroke-dasharray: 16px;
-      stroke-dashoffset: 16px;
-      transition: all 0.3s ease;
-      transform: translate3d(0, 0, 0);
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        fill: none;
+        stroke: #fff;
+        stroke-dasharray: 16px;
+        stroke-dashoffset: 16px;
+        transition: all 0.3s ease;
+        transform: translate3d(0, 0, 0);
     }`,
     vote_count: 3,
     user_id: 10,
@@ -196,7 +204,7 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'CSS'
   },
   {
-    title: 'Title 12',
+    title: 'Funny date formating in Java.',
     post_body: `java.util.Date = java.text.DateFormat.getDateInstance().parse(date String);`,
     vote_count: 5,
     user_id: 9,
@@ -204,8 +212,9 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'Java'
   },
   {
-    title: 'Title 13',
-    post_body: `// Enter "method [Tab]", then...  
+    title: 'By making the methods public, that means that they can be accessed globally across the entire file structure, right? Or am I missing something...',
+    post_body: `
+    // Enter "method [Tab]", then...  
     public void MyMethod()  {
         throw new NotImplementedException();
     }
@@ -230,22 +239,23 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'C#'
   },
   {
-    title: 'Title 14',
-    post_body: `Average
+    title: 'Today is the first day I tried to use C++. Today is also the last :)',
+    post_body: `
+    Average
 
     #include <iostream.h>
     #include <math.h> 
     int main()
     {
-    int number1,number2,number3;
-    double average;
-    
-    cout<<"Enter three integers and I will display the average"<<endl;
-    cin>>number1>>number2>>number3;
-    average = (number1 + number2 + number3) / 3.0;
-    cout<<"The average is "<<average<<endl;
-    
-    return 0;
+      int number1,number2,number3;
+      double average;
+      
+      cout<<"Enter three integers and I will display the average"<<endl;
+      cin>>number1>>number2>>number3;
+      average = (number1 + number2 + number3) / 3.0;
+      cout<<"The average is "<<average<<endl;
+      
+      return 0;
     }`,
     vote_count: 8,
     user_id: 7,
@@ -253,8 +263,9 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'C++'
   },
   {
-    title: 'Title 15',
-    post_body: `$result = $mysqli->query('SELECT * FROM students');
+    title: 'Changing around some code, but I am not sure if this is correct in PHP. Not getting any errors, but the while loop is not working. Whats wrong?',
+    post_body: `
+    $result = $mysqli->query('SELECT * FROM students');
     while ($row = $result->fetch_assoc()) {
       echo $row['name'] . '<br>';
     }`,
@@ -264,9 +275,10 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'PHP'
   },
   {
-    title: 'Title 16',
-    post_body: `## Taking Two Integers as input
-    a,b = map(int,input().split())
+    title: 'So, map takes in two integers but it literally is using the same syntax as javascript would use on a string.',
+    post_body: `
+    ## Taking Two Integers as input
+    a, b = map(int,input().split())
     print("a:",a)
     print("b:",b)
     
@@ -279,8 +291,9 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'Python'
   },
   {
-    title: 'Title 17',
-    post_body: `let myObject = { one: 1, two: 2, three: 3 };
+    title: 'Would the keys hewre be the name before the semicolon?',
+    post_body: `
+    let myObject = { one: 1, two: 2, three: 3 };
     Object.keys(myObject).forEach((key, value) => {
       //...do something
       console.log(key, value);
@@ -291,7 +304,7 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'Javascript'
   },
   {
-    title: 'Title 18',
+    title: 'What is this weird string in pattern??? lol',
     post_body: `<input type="text" title="email_address" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" />`,
     vote_count: 1,
     user_id: 3,
@@ -299,8 +312,9 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'HTML'
   },
   {
-    title: 'Title 19',
-    post_body: `::selection {
+    title: 'What is the difference between :: and : ? It looks like you can use :: stand alone maybe?',
+    post_body: `
+    ::selection {
       background: aquamarine;
       color: black;
     }
@@ -315,7 +329,7 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'CSS'
   },
   {
-    title: 'Title 20',
+    title: 'Why does the MM upper case but dd and yyyy are lowercase? Kinda funny.',
     post_body:  `
     SimpleDateFormat format = new SimpleDateFormat( "dd.MM.yyyy" );
     Date date = format.parse( myString );
@@ -326,8 +340,9 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'Java'
   },
   {
-    title: 'Title 21',
-    post_body: `// Enter "imethod [Tab]", then...  
+    title: 'Advice for a C++ developer trying to get into C#? Not used to this syntax at all and would like some advice.',
+    post_body: `
+    // Enter "imethod [Tab]", then...  
     public void MyMethod();
     
     // Enter "imethod1 [Tab]", then...  
@@ -344,8 +359,9 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     tag_language: 'C#'
   },
   {
-    title: 'Title 22',
-    post_body: `Area of rectangle
+    title: 'Funny >> << lol',
+    post_body: `
+    Area of rectangle
 
     #include <iostream> 
     using namespace std; 
@@ -354,17 +370,17 @@ public virtual void MyMethod(object arg1, object arg2, object arg3)  {
     
     int main() 
     { 
-    float length, width, area; 
-    
-    cout << "Enter The Length Of The Rectangle: "; 
-    cin >> length; 
-    cout << "Enter The Width Of Rectangle: "; 
-    cin >> width; 
-    area = length*width; 
-    
-    cout <<"The area of the rectangle is : "<< area << endl;
-    
-    return 0; 
+      float length, width, area; 
+      
+      cout << "Enter The Length Of The Rectangle: "; 
+      cin >> length; 
+      cout << "Enter The Width Of Rectangle: "; 
+      cin >> width; 
+      area = length*width; 
+      
+      cout <<"The area of the rectangle is : "<< area << endl;
+      
+      return 0; 
     }
     `,
     vote_count: 15,
