@@ -111,21 +111,26 @@ let retrievePostIds = function () {
 
   upvotedPosts = JSON.parse(savedUpvotes);
   downvotedPosts = JSON.parse(savedDownvotes);
-
-  if (upvotedPosts.length !== null) {
+  console.log(upvotedPosts);
+  console.log(downvotedPosts);
+  if (upvotedPosts) {
     for (i = 0; i < upvotedPosts.length; i++) {
       let id = upvotedPosts[i];
       let upvoteIcon = document.getElementById(`upvote-${id}`);
       upvoteIcon.classList.add("hidden");
     }
+  } else {
+      upvotedPosts = [];
   }
 
-  if (downvotedPosts.length !== null) {
+  if (downvotedPosts) {
     for (i = 0; i < downvotedPosts.length; i++) {
       let id = downvotedPosts[i];
       let downvoteIcon = document.getElementById(`downvote-${id}`);
       downvoteIcon.classList.add("hidden");
     }
+  } else {
+      downvotedPosts = [];
   }
 };
 

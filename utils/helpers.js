@@ -68,6 +68,13 @@ module.exports = {
         totalComments += commentAmt;
       }
       return totalComments;
+    },
+    concat_url: (github) => {
+      let url = 'https://github-readme-stats.vercel.app/api/top-langs/?username='
+      let strName = `${github}`;
+      console.log(url.concat(strName));
+      let newstr = url.concat(strName)
+      return newstr;
     }
 }
 

@@ -45,6 +45,8 @@ router.get('/', (req,res) => {
             attributes: [
               'id',
               'username',
+              'github',
+              'bio',
               'email',
               'password'  
               
@@ -56,6 +58,8 @@ router.get('/', (req,res) => {
           attributes: [
             'id',
             'username',
+            'github',
+            'bio',
             'email',
             'password' 
           ]

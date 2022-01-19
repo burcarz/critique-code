@@ -5,7 +5,7 @@ const userdata = [
   {
     username: 'Bobby',
     email: 'bobby@bradybunch.com',
-    github: 'bobby', 
+    github: 'burcarz', 
     title: 'Senior Developer',
     bio: `God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs. So you two dig up, dig up dinosaurs? I was part of something special. Eventually, you do plan to have dinosaurs on your dinosaur tour, right? They're using our own satellites against us. And the clock is ticking.`,
     upvoted_posts:{}, 
