@@ -426,6 +426,8 @@ ul {
     background-image: linear-gradient(rgb(43, 48, 66, 1), rgb(34, 34, 34, .2));
 }
 
+
+
 .post-modal {
     align-items: center;
     display: none;
@@ -514,9 +516,10 @@ ul {
 /* SIDE BAR CONTENT */
 
 .sidebar-right {
-    background-color: #D92365;
+    background-color: #73518d;
     width: 18%;
     position: fixed;
+    border-radius: 15px;
     /* z-index: 1; */
     top: 25%;
     right: 1%;
