@@ -73,6 +73,7 @@ const downvoteClickHandler = async function (id) {
     upvoteIcon.classList.remove("hidden");
     downvotedPosts.push(id);
     localStorage.setItem(`downvotedPosts`, JSON.stringify(downvotedPosts));
+    localStorage.removeItem(`upvotedPosts`, )
   } else {
       downvotedPosts = [];
       localStorage.setItem(`downvotedPosts`, JSON.stringify(downvotedPosts));

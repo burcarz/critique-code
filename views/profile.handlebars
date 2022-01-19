@@ -10,10 +10,7 @@
     <img class="profile-icon" src="/assets/avatar.jpg"></img>
     <div>
     <h4>Bio</h4>
-    <p>So you two dig up, dig up dinosaurs? They're using our own satellites against us. 
-        And the clock is ticking. Remind me to thank John for a lovely weekend. 
-        Yeah, but your scientists were so preoccupied with whether or not they could, 
-        they didn't stop to think if they should.</p>
+    <p>{{posts.[1].user.bio}}</p>
     </div>
     <div>
     <div>
@@ -25,10 +22,15 @@
  </section>
 </section>
 
-<img src='{{concat_url posts.[1].user.github}}'></img>
+<section class="side-info">
+     <section class="sidebar-left">
+   <div="inner-side">
+       <img src='{{concat_url posts.[1].user.github}}'></img>
+    </div>
+ </section>
+</section>
 
 <section>
-
 {{#if posts.length}}
 <section class="endless-scroll">
     <div class="posts-timeline">
@@ -36,7 +38,7 @@
         {{#each posts as |post|}}
         <div class="post-container">
             {{> post-info post}}
-            <a href="/profile/edit/{{post.id}}" class="edit-link">Edit post</a>
+            <a href="/profile/edit/{{user.post.id}}" class="edit-link">Edit post</a>
         </div>
         {{/each}}
     </div>
