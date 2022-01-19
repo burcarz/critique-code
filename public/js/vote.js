@@ -3,7 +3,7 @@
 const voteClickHandler = async function(id) {
     console.log(id)
     // console.log(postId);
-    const response = await fetch(`/api/posts/vote/${postId}`, {
+    const response = await fetch(`/api/posts/vote/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -14,13 +14,6 @@ const voteClickHandler = async function(id) {
     } else {
         console.log('vote failed to seed')
     }
-    // fetch(`/api/posts/${id}`)
-    // .then(postResponse => postResponse.json())
-    // .then(data => {
-    //     console.log(data);
-    //     let voteText = document.querySelector(`#vote-val${id}`);
-    //     voteText.innerHTML = data.vote_count;
-    // });
     let voteText = document.querySelector(`#vote-val${id}`);
     let intVote = parseInt(voteText.innerHTML);
     intVote++;
@@ -30,21 +23,12 @@ const voteClickHandler = async function(id) {
 }
 
 let getVoteId = function() {
-    // let elements = document.getElementsByClassName('up-vote-icon');
     document.querySelector('.posts-timeline').addEventListener('click', (e) => {
         console.log(e.target);
         let postId = e.target.id;
-        voteClickHandler(postId);
+        let postIdArr = postId.split('-');
+        voteClickHandler(postIdArr[1]);
     })
-    // for (i = 0; i < elements.length; i++) {
-    //     // console.log(elements[i].id);
-    //     let postId = elements[i].id
-    //     // id.push(elements[i].id);
-    //     document.getElementById(`${postId}`).addEventListener('click', (e) => {
-    //         voteClickHandler(postId);
-            
-    //     })
-    // }
 }
 
 getVoteId();
