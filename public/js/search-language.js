@@ -40,3 +40,21 @@ document.querySelector('.search-form').addEventListener('submit', (e) => {
     console.log(searchText);
     getPostByLanguage(searchText);
 });
+
+let input = document.getElementById('language-search');
+
+function enter() {
+    input.setAttribute('placeholder', "Don't Type French or Something Like that");
+}
+
+function exit() {
+    input.setAttribute('placeholder', 'because that would send a 500 error lmao');
+    setTimeout(wait, 3000);
+}
+
+function wait() {
+    input.setAttribute('placeholder', 'Now, what PROGRAMMING LANGUAGE are you looking for?');
+}
+
+input.addEventListener("mouseover", enter);
+input.addEventListener("mouseout", exit);

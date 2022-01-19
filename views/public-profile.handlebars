@@ -34,19 +34,11 @@
 {{#if posts.length}}
 <section class="endless-scroll">
     <div class="posts-timeline">
-        <h2 id="posts-id">Welcome Back {{posts.[1].user.username}} </h2>
+        <h2 id="posts-id">Welcome to {{posts.[1].user.username}}'s Profile</h2>
         {{#each posts as |post|}}
         <div class="post-container">
             {{> post-info post}}
-            <a href="/profile/edit/{{user.post.id}}" class="edit-link">Edit post</a>
         </div>
         {{/each}}
-    </div>
-</section>
+</div>
 {{/if}}
-    <div id="btn-new-post-holder">
-        {{!-- <button id="btn-new-post" class="btn-no-style"> + New Post</button> --}}
-        <a href="/profile/create-post">Create Post</a>
-    </div>
-
-</section>

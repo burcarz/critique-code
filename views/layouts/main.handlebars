@@ -43,7 +43,7 @@
             </div>
             <div class="search-bar">
             <form class="search-form">
-            <input class="search-term" id="language-search" type="text" placeholder="What language do you want to see?" name="search">
+            <input class="search-term" id="language-search" type="text" placeholder="What language are you looking for?" name="search">
             <button type="submit" class="search-button" id="search-btn">
                 <i class="fa fa-search"></i>
             </button>
@@ -57,11 +57,10 @@
             {{!-- sign up/login modal  --}}
             <div id="signup-modal" class="modal">
                 <div class="modal-content container right-panel-active">
-                    <span class="close">&times;</span>
                     <!-- sign up -->
                     <div class="container_form container_signup">
                     <form action="#" class="form" id="form1">
-                        <h2 class="form_title">SIGN UP!</h2>
+                        <h2 class="form_title">Join in on the fun!</h2>
                         <input type="text" class="input" placeholder="Email" id="email-signup" />
                         <input type="text" class="input" placeholder="Username" id="username-signup" />
                         <input type="password" class="input" placeholder="Password" id="password-signup" />
@@ -71,7 +70,7 @@
                     <!-- login -->
                     <div class="container_form container_signin">
                     <form action="#" class='form' id="form2">
-                        <h2 class="form_title">LOG IN!</h2>
+                        <h2 class="form_title">Welcome Back!</h2>
                         <input type="text" class="input" placeholder="username" id="username-login" />
                         <input type="password" class="input" paceholder="password" id="password-login" />
                         <button type="submit" class="auth-button" id="log-btn">Log in</button>
@@ -80,6 +79,7 @@
                     <!-- overlay -->
                     <div class="container_overlay">
                         <div class="overlay">
+                            <span class="close">&times;</span>
                             <div class="overlay_panel overlay_left">
                                 <button class="auth-button" id="logIn">Log In</button>
                             </div>

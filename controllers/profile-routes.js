@@ -4,7 +4,77 @@ const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-
+router.get('/:id', (req,res) => {
+  // if they are  not logged in redirect to a homepage if one exists.
+ Post.findAll({
+     where: {
+       // use the ID from the session
+       user_id: req.params.id
+   
+     },
+     attributes: [
+       'id',
+       'title',
+       'post_body',
+       'vote_count',
+       'user_id',
+       'tag_genre',
+       'tag_language',
+       'created_at'
+  
+     ],
+     include: [
+       {
+         model: Comment,
+         attributes: [
+           'id',
+           'comment_body',
+           'user_id',
+           'post_id', 
+           'created_at'
+             ],
+         include: {
+           model: User,
+           attributes: [
+             'id',
+             'username',
+             'github',
+             'bio',
+             'email',
+             'password'  
+             
+           ]
+         }
+       },
+       {
+         model: User,
+         attributes: [
+           'id',
+           'username',
+           'github',
+           'bio',
+           'avatar',
+           'email',
+           'password' 
+         ]
+       }
+     ]
+   })
+     .then(dbPostData => {
+      // console.table(dbPostData);
+        
+       // serialize data before passing to template
+       const posts = dbPostData.map(post => post.get({ plain: true }));
+  
+       // Render dashboard with posts
+       res.render('public-profile', { posts, loggedIn: true });
+   
+     })
+     .catch(err => {
+       console.log(err);
+       res.status(500).json(err);
+     });
+});
 
 // GET /dashboard/ gets all posts while logged in
 router.get('/', (req,res) => {
@@ -60,6 +130,7 @@ router.get('/', (req,res) => {
             'username',
             'github',
             'bio',
+            'avatar',
             'email',
             'password' 
           ]

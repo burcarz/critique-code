@@ -54,7 +54,11 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true
     },
-
+    avatar: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      defaultValue: "avatar1.png"
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -4,7 +4,7 @@
     </div>
     <div class="title">
         <a href="/post/{{id}}" target="blank">{{title}}</a>
-        <span>Posted by: {{user.username}}</span>
+        <span>Posted by: <a href="/profile/{{user.id}}">{{user.username}}</a></span>
         <span>{{format_date created_at}} ago</span>
         <span class="tags"><a href="/tag/{{tag_language}}">{{tag_language}}</a>
         <a href="/{{tag_genre}}">{{tag_genre}}</a></span>
