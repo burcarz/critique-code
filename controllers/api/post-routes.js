@@ -403,8 +403,8 @@ router.put('/upvote/:id',withAuth, (req, res) => {
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
-  })
-})
+  });
+});
 
 router.put('/downvote/:id',withAuth, (req, res) => {
   Post.decrement(
@@ -427,8 +427,8 @@ router.put('/downvote/:id',withAuth, (req, res) => {
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
-  })
-})
+  });
+});
 
 // DELETE /api/post/1      Delete a post by id
   router.delete('/:id', (req, res) => {
