@@ -38,13 +38,13 @@ router.get('/', (req, res) => {
                 // Attach the username to the comment
                 include: {
                   model:User,
-                  attributes: ['username']
+                  attributes: ['username', 'id']
                 }
   
               },
               {   // User who posted
                   model: User, 
-                  attributes: ['username']
+                  attributes: ['username', 'id']
               }
           ]
 
@@ -167,13 +167,13 @@ router.get('/post/:id', (req,res) => {
                 ],
                 include: {
                     model: User, 
-                    attributes: ['username']
+                    attributes: [ 'id', 'username']
 
                 }
             },
             {
                 model: User,
-                attributes: ['username']
+                attributes: ['id', 'username']
             }
         ]
     })
