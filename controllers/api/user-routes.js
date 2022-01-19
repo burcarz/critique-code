@@ -75,6 +75,9 @@ router.post('/',withAuth, (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
+    github: req.body.github,
+    upvoted_posts: req.body.upvoted_posts,
+    downvoted_posts: req.body.downvoted_posts,
     password: req.body.password
   })
   
