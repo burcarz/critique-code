@@ -12,6 +12,47 @@
 	--max-width: 758px;
 	--max-height: 420px;
 }
+/* edit profile */
+
+.avatar-icon {
+	max-width: 40px;
+	max-height: 40px;
+	padding: 2px;
+	border-radius: 20%;
+}
+
+.avatar-icon:hover {
+	cursor: pointer;
+}
+
+.edit-modal-content {
+	background-color: var(--white);
+	background: url("https://images.pexels.com/photos/1342460/pexels-photo-1342460.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	/* place-items: center; */
+}
+
+.edit-right {
+	width: 50%;
+	float: right;
+	padding: 100px 30px 60px 30px;
+	text-align: center;
+	margin: 0px auto 0px auto;
+}
+
+.edit-left {
+	width: 50%;
+	padding: 100px 30px 0px 30px;
+	float: left;
+	text-align: center;
+	margin: 0px auto 0px auto;
+}
+
+/* end edit profile */
 /* modal CSS */
 .modal {
     align-items: center;
@@ -37,6 +78,14 @@
 	display: grid;
 	height: 100vh;
 	place-items: center;
+}
+
+.edit-container-form {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	transition: all 0.6s ease-in-out;
+    /* backdrop-filter: blur(3px); */
 }
 
 /* Add Animation */
@@ -101,7 +150,7 @@
 	left: 0;
 	opacity: 0;
 	width: 50%;
-	z-index: 1;
+	z-index: 2;
 }
 
 .container.right-panel-active .container_signup {

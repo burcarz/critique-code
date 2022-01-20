@@ -117,6 +117,7 @@ router.get('/', (req,res) => {
               'username',
               'github',
               'bio',
+              'title',
               'email',
               'password'  
               
@@ -130,6 +131,7 @@ router.get('/', (req,res) => {
             'username',
             'github',
             'bio',
+            'title',
             'avatar',
             'email',
             'password' 

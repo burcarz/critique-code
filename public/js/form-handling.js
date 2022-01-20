@@ -88,3 +88,4 @@ async function createPostHandler(genre, lang) {
 
 
 document.querySelector('#post-btn').addEventListener('click', createPostClick);
+// document.querySelector('#post-btn2').addEventListener('click', createPostClick);

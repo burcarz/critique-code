@@ -2,14 +2,16 @@
      <section class="sidebar-right">
    <div="inner-side">
     <div class="header-card">
-    <h3>{{posts.[1].user.username}}</h3>
+    <h3>{{posts.[1].user.username}}<span>
+        <button class="edit-post auth-btns" id="edit-post-btn">Edit</button>
+    </span></h3>
     <div>
-        <h4>Software Engineer</h4>
+        <h4>{{posts.[1].user.title}}</h4>
     </div>
     <img class="profile-icon" src="/assets/{{posts.[1].user.avatar}}"></img>
     </div>
     <div class="about-section">
-    <p>{{posts.[1].user.bio}}</p>
+    <p id="bio-text">{{posts.[1].user.bio}}</p>
     </div>
     <div>
     <div class="about-section">
@@ -22,12 +24,16 @@
 
 <section class="side-info">
      <section class="sidebar-left">
-   <div="inner-side">
+   <div class="inner-side" id="{{posts.[1].user.id}}">
        <div class="header-card">
        <img src='{{concat_url posts.[1].user.github}}'></img>
        </div>
+        <div id="btn-new-post-holder">
+        {{!-- <button id="btn-new-post" class="btn-no-style"> + New Post</button> --}}
+        <button class="create-post auth-btns" id="post-btn">Create Post</button>
+        </div>
     </div>
- </section>
+    </section>
 </section>
 
 <section>
@@ -44,9 +50,34 @@
     </div>
 </section>
 {{/if}}
-    <div id="btn-new-post-holder">
-        {{!-- <button id="btn-new-post" class="btn-no-style"> + New Post</button> --}}
-        <a href="/profile/create-post">Create Post</a>
-    </div>
-
 </section>
+<script src="/js/edit-profile.js"></script>
+<div id="edit-modal" class="modal">
+    <div class="edit-modal-content container">
+        <!-- sign up -->
+    <div class="edit-right">
+            <input type="text" class="input" name="username" placeholder="{{posts.[1].user.username}}" id="username-edit" />
+            <input type="text" class="input" name="user-title" placeholder="{{posts.[1].user.title}}" id="title-edit" />
+            <input type="text" class="input" name="user-github" placeholder="{{posts.[1].user.github}}" id="github-edit" />
+            <button type="submit" class="auth-button" id="save-changes-btn">Save Changes</button>
+    </div>
+        <!-- login -->
+    <div class="edit-left">
+            <textarea type="text" class="input" name="user-bio" placeholder="bio" id="bio-edit"></textarea>
+            <div class="drop-down">
+            <img src="/assets/{{posts.[1].user.avatar}}" type="button" id="selectAv" class="avatar-icon selected">
+            </img>
+            <div id="avatar-options" class="options">
+            <img src="/assets/avatar1.png" id="avatar1.png" type="button"class="avatar-icon"></img>
+            <img src="/assets/avatar2.png" id="avatar2.png" type="button" class="avatar-icon"></img>
+            <img src="/assets/avatar3.png" id="avatar3.png" type="button" class="avatar-icon"></img>
+            <img src="/assets/avatar4.png" id="avatar4.png" type="button" class="avatar-icon"></img>
+            <img src="/assets/avatar5.png" id="avatar5.png" type="button" class="avatar-icon"></img>
+            <img src="/assets/avatar6.png" id="avatar6.png" type="button" class="avatar-icon"></img>
+            <img src="/assets/avatar7.png" id="avatar7.png" type="button" class="avatar-icon"></img>
+            <img src="/assets/avatar8.png" id="avatar8.png" type="button" class="avatar-icon"></img>
+            </div>
+            </div>
+        <!-- overlay -->
+    </div>
+</div>
