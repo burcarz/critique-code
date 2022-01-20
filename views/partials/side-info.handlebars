@@ -24,7 +24,11 @@
     </span></p>
     </div>
     <div class="create-button">
+    {{#if loggedIn}}
     <button id="create-post-btn" class="create-post auth-btns">Create a post</button>
+    {{else}}
+     <button id="other-login-btn" class="create-post auth-btns">Create a post</button>
+     {{/if}}
     </div>
     </div>
  </section>

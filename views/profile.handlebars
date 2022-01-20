@@ -49,8 +49,17 @@
         {{/each}}
     </div>
 </section>
-{{/if}}
+{{else}}
+<section class="endless-scroll">
+    <div class="posts-timeline">
+        <h2 id="posts-id">Welcome {{posts.[1].user.username}} </h2>
+        <div class="post-container">
+            <h3>You don't have any posts!</h3>
+        </div>
+    </div>
 </section>
+</section>
+{{/if}}
 <div id="edit-modal" class="modal">
     <div class="edit-modal-content container">
         <!-- sign up -->
