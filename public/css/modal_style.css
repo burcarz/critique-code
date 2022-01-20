@@ -15,10 +15,10 @@
 /* edit profile */
 
 .avatar-icon {
-	max-width: 40px;
-	max-height: 40px;
+	max-width: 60px;
+	max-height: 60px;
 	padding: 2px;
-	border-radius: 20%;
+	border-radius: 80%;
 }
 
 .avatar-icon:hover {

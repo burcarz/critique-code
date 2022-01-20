@@ -6,6 +6,7 @@ async function editPostHandler(e) {
     let avOpt = document.querySelector("#avatar-options");
     const saveChanges = document.getElementById('save-changes-btn');
     let editModal = document.getElementById('edit-modal');
+
     const avSel = document.getElementById("selectAv");
     editModal.style.display = "block";
 
@@ -18,6 +19,13 @@ async function editPostHandler(e) {
         console.log(avOpt);
 
     })
+
+    window.onclick = function(event) {
+        let editModal = document.getElementById('edit-modal');
+        if (event.target == editModal) {
+            editModal.style.display = "none"
+        }
+    }
 
     const id = document.querySelector('.inner-side').id;
     console.log(id);
