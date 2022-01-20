@@ -35,11 +35,11 @@ async function btnClickHandler(event) {
         console.log(e.target);
     })
 
-    firstForm.addEventListener("submit", (e) => e.preventDefault());
-	secondForm.addEventListener("submit", (e) => e.preventDefault());
+    firstForm.addEventListener("submit", signupFormHandler);
+	secondForm.addEventListener("submit", loginFormHandler);
     console.log('clicked!');
     document.querySelector('#log-btn').addEventListener('click', loginFormHandler);
-    document.querySelector('#unique-btn').addEventListener('submit', signupFormHandler);
+    document.querySelector('#unique-btn').addEventListener('click', signupFormHandler);
 }
 // sign up form that POSTS new user data to /api/users
 async function signupFormHandler(event) {
