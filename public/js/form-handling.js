@@ -16,18 +16,18 @@ async function createPostClick(event) {
     let createModal = document.getElementById('create-post-modal');
     createModal.style.display = "block";
 
-    document.getElementsByClassName('close')[0].addEventListener('click', function() {
-        createModal.style.display = "none"
-    });
-    document.getElementById('close-post').addEventListener('click', function() {
-        createModal.style.display = "none";
-    });
-    window.onclick = function(event) {
-        let createModal = document.getElementById('create-post-modal');
-        if (event.target == createModal) {
-            createModal.style.display = "none"
-        }
-    }
+    // document.getElementsByClassName('close')[0].addEventListener('click', function() {
+    //     createModal.style.display = "none"
+    // });
+    // document.getElementById('close-post').addEventListener('click', function() {
+    //     createModal.style.display = "none";
+    // });
+    // window.onclick = function(event) {
+    //     let createModal = document.getElementById('create-post-modal');
+    //     if (event.target == createModal) {
+    //         createModal.style.display = "none"
+    //     }
+    // }
     // control modal animations
     detailsBtn.addEventListener("click", () => {
 		console.log('clicked')
@@ -87,5 +87,4 @@ async function createPostHandler(genre, lang) {
 }
 
 
-document.querySelector('#post-btn').addEventListener('click', createPostClick);
-// document.querySelector('#post-btn2').addEventListener('click', createPostClick);
+document.querySelector('#create-post-btn').addEventListener('click', createPostClick);

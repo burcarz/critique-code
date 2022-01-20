@@ -3,7 +3,7 @@
    <div="inner-side">
     <div class="header-card">
     <h3>{{posts.[1].user.username}}<span>
-        <button class="edit-post auth-btns" id="edit-post-btn">Edit</button>
+        <button class="edit-post auth-btns" id="edit-profile-btn">Edit</button>
     </span></h3>
     <div>
         <h4>{{posts.[1].user.title}}</h4>
@@ -30,7 +30,7 @@
        </div>
         <div id="btn-new-post-holder">
         {{!-- <button id="btn-new-post" class="btn-no-style"> + New Post</button> --}}
-        <button class="create-post auth-btns" id="post-btn">Create Post</button>
+        {{!-- <a href="/profile/create-post">Create Post</a> --}}
         </div>
     </div>
     </section>
@@ -44,14 +44,13 @@
         {{#each posts as |post|}}
         <div class="post-container">
             {{> post-info post}}
-            <a href="/profile/edit/{{user.post.id}}" class="edit-link">Edit post</a>
+            <a href="/profile/edit/{{id}}" class="edit-link">Edit post</a>
         </div>
         {{/each}}
     </div>
 </section>
 {{/if}}
 </section>
-<script src="/js/edit-profile.js"></script>
 <div id="edit-modal" class="modal">
     <div class="edit-modal-content container">
         <!-- sign up -->
