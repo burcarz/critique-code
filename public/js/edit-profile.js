@@ -59,7 +59,9 @@ async function sendProfileInfo(avatarImg, id) {
     }
 
     if (avatar === "[object HTMLDivElement]") {
-        avatar = "/avatar1.png";
+        avatar = document.querySelector('.profile-icon').id;
+        // avatar.split('/');
+        console.log(avatar);
     }
 
     if (!bio) {
