@@ -315,3 +315,10 @@
 		z-index: 5;
 	}
 }
+
+
+@media screen and (max-width: 575px) {
+	.modal {
+		left: 0%;
+	}
+}

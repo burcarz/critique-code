@@ -60,7 +60,6 @@ async function sendProfileInfo(avatarImg, id) {
 
     if (avatar === "[object HTMLDivElement]") {
         avatar = document.querySelector('.profile-icon').id;
-        // avatar.split('/');
         console.log(avatar);
     }
 
