@@ -40,15 +40,33 @@ async function editPostHandler(e) {
 }
 
 async function sendProfileInfo(avatarImg, id) {
-    const title = document.querySelector('input[name="user-title"]').value;
+    let title = document.querySelector('input[name="user-title"]').value;
     let bio = document.querySelector('textarea[name="user-bio"]').value;
-    const username = document.querySelector('input[name="username"]').value;
-    const github = document.querySelector('input[name="user-github"]').value;
-    const avatar = `${avatarImg}`;
+    let username = document.querySelector('input[name="username"]').value;
+    let github = document.querySelector('input[name="user-github"]').value;
+    let avatar = `${avatarImg}`;
+
+    if (!title) {
+        title = document.querySelector('#title-user').innerHTML;
+    }
+
+    if (!username) {
+        username = document.querySelector('#user-username').innerHTML;
+    }
+
+    if (!github) {
+        github = document.querySelector('#github-id').innerHTML;
+    }
+
+    if (avatar === "[object HTMLDivElement]") {
+        avatar = "/avatar1.png";
+    }
 
     if (!bio) {
         bio = document.getElementById('bio-text').innerHTML;
     }
+
+    console.log([avatar, username, title, bio, github]);
         const response = await fetch(`../api/users/${id}`, {
             method: 'PUT',
             body: JSON.stringify({

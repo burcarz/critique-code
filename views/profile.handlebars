@@ -2,15 +2,15 @@
      <section class="sidebar-right">
    <div="inner-side">
     <div class="header-card">
-    <h3>{{posts.[0].user.username}}<span>
-        <button class="edit-post auth-btns" id="edit-profile-btn">Edit</button>
-    </span></h3>
+    <button class="edit-post auth-btns" id="edit-profile-btn">Edit</button>
+    <h3 id="user-username">{{posts.[0].user.username}}</h3>
     <div>
-        <h4>{{posts.[0].user.title}}</h4>
+        <h4 id="title-user">{{posts.[0].user.title}}</h4>
     </div>
     <img class="profile-icon" src="/assets/{{posts.[0].user.avatar}}"></img>
     </div>
     <div class="about-section">
+    <p id="github-id">{{posts.[0].user.github}}</p>
     <p id="bio-text">{{posts.[0].user.bio}}</p>
     </div>
     <div>
