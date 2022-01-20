@@ -1,14 +1,16 @@
+<section class="endless-scroll">
+    <div class="posts-timeline">
 {{> post-info post}}
-
 <form class="comment-form">
     <div>
         <textarea name="comment-text"></textarea>
     </div>
     <div>
-        <button type="submit">add comment</button>
+        <button type="submit" class="auth-btns">add comment</button>
     </div>
 </form>
-
 {{> comments post.comments}}
+    </div>
+</section>
 
 <script src="/js/create-comment.js"></script>
