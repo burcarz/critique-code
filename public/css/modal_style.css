@@ -19,10 +19,21 @@
 	max-height: 60px;
 	padding: 2px;
 	border-radius: 80%;
+	transition: all .2s ease-in-out;
+	box-shadow: 0 0.9rem 1.7rem rgba(0, 0, 0, 0.25),
+	0 0.7rem 0.7rem rgba(0, 0, 0, 0.22);
+}
+
+.avatar-icon-main {
+	max-width: 60px;
+	max-height: 60px;
+	padding: 2px;
+	border-radius: 80%;
 }
 
 .avatar-icon:hover {
 	cursor: pointer;
+	transform: scale(1.5);
 }
 
 .edit-modal-content {
@@ -256,6 +267,10 @@
 
 .auth-button:focus {
 	outline: none;
+}
+
+.auth-button:hover {
+	transform: scale(1.05);
 }
 
 .form {
