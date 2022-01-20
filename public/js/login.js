@@ -66,9 +66,35 @@ async function signupFormHandler(event) {
         });
         if (response.ok) {
             modal.style.display = 'none';
-            document.location.replace('/')
+            //document.location.replace('/')
         } else {
             console.log('failure to signup');
+            return;
+        }
+
+        const title = 'Wait, I just posted this?';
+        const post_body = 'No you did not! Its your welcome message! Welcome to CritiqueCode :)';
+        const tag_genre = 'Funny';
+        const tag_language = 'javascript'
+
+        const postRes = await fetch('/api/posts', {
+            method: 'POST',
+            body: JSON.stringify({
+                title,
+                post_body,
+                tag_genre,
+                tag_language
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if(postRes.ok) {
+            console.log('postRes success!');
+            document.location.replace('/');
+        } else {
+            console.log('failed to create welcome post');
         }
     }
 }
