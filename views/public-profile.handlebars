@@ -2,14 +2,14 @@
      <section class="sidebar-right">
    <div="inner-side">
     <div class="header-card">
-    <h3>{{posts.[1].user.username}}</h3>
+    <h3>{{posts.[0].user.username}}</h3>
     <div>
         <h4>Software Engineer</h4>
     </div>
-    <img class="profile-icon" src="/assets/{{posts.[1].user.avatar}}"></img>
+    <img class="profile-icon" src="/assets/{{posts.[0].user.avatar}}"></img>
     </div>
     <div class="about-section">
-    <p>{{posts.[1].user.bio}}</p>
+    <p>{{posts.[0].user.bio}}</p>
     </div>
     <div>
     <div class="about-section">
@@ -24,7 +24,7 @@
      <section class="sidebar-left">
    <div="inner-side">
        <div class="header-card">
-       <img src='{{concat_url posts.[1].user.github}}'></img>
+       <img src='{{concat_url posts.[0].user.github}}'></img>
        </div>
     </div>
  </section>
@@ -34,7 +34,7 @@
 {{#if posts.length}}
 <section class="endless-scroll">
     <div class="posts-timeline">
-        <h2 id="posts-id">Welcome to {{posts.[1].user.username}}'s Profile</h2>
+        <h2 id="posts-id">Welcome to {{posts.[0].user.username}}'s Profile</h2>
         {{#each posts as |post|}}
         <div class="post-container">
             {{> post-info post}}

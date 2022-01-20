@@ -2,16 +2,16 @@
      <section class="sidebar-right">
    <div="inner-side">
     <div class="header-card">
-    <h3>{{posts.[1].user.username}}<span>
+    <h3>{{posts.[0].user.username}}<span>
         <button class="edit-post auth-btns" id="edit-profile-btn">Edit</button>
     </span></h3>
     <div>
-        <h4>{{posts.[1].user.title}}</h4>
+        <h4>{{posts.[0].user.title}}</h4>
     </div>
-    <img class="profile-icon" src="/assets/{{posts.[1].user.avatar}}"></img>
+    <img class="profile-icon" src="/assets/{{posts.[0].user.avatar}}"></img>
     </div>
     <div class="about-section">
-    <p id="bio-text">{{posts.[1].user.bio}}</p>
+    <p id="bio-text">{{posts.[0].user.bio}}</p>
     </div>
     <div>
     <div class="about-section">
@@ -24,9 +24,9 @@
 
 <section class="side-info">
      <section class="sidebar-left">
-   <div class="inner-side" id="{{posts.[1].user.id}}">
+   <div class="inner-side" id="{{posts.[0].user.id}}">
        <div class="header-card">
-       <img src='{{concat_url posts.[1].user.github}}'></img>
+       <img src='{{concat_url posts.[0].user.github}}'></img>
        </div>
         <div id="btn-new-post-holder">
         {{!-- <button id="btn-new-post" class="btn-no-style"> + New Post</button> --}}
@@ -40,7 +40,7 @@
 {{#if posts.length}}
 <section class="endless-scroll">
     <div class="posts-timeline">
-        <h2 id="posts-id">Welcome Back {{posts.[1].user.username}} </h2>
+        <h2 id="posts-id">Welcome Back {{posts.[0].user.username}} </h2>
         {{#each posts as |post|}}
         <div class="post-container">
             {{> post-info post}}
@@ -52,7 +52,7 @@
 {{else}}
 <section class="endless-scroll">
     <div class="posts-timeline">
-        <h2 id="posts-id">Welcome {{posts.[1].user.username}} </h2>
+        <h2 id="posts-id">Welcome {{posts.[0].user.username}} </h2>
         <div class="post-container">
             <h3>You don't have any posts!</h3>
         </div>
@@ -64,16 +64,16 @@
     <div class="edit-modal-content container">
         <!-- sign up -->
     <div class="edit-right">
-            <input type="text" class="input" name="username" placeholder="{{posts.[1].user.username}}" id="username-edit" />
-            <input type="text" class="input" name="user-title" placeholder="{{posts.[1].user.title}}" id="title-edit" />
-            <input type="text" class="input" name="user-github" placeholder="{{posts.[1].user.github}}" id="github-edit" />
+            <input type="text" class="input" name="username" placeholder="{{posts.[0].user.username}}" id="username-edit" />
+            <input type="text" class="input" name="user-title" placeholder="{{posts.[0].user.title}}" id="title-edit" />
+            <input type="text" class="input" name="user-github" placeholder="{{posts.[0].user.github}}" id="github-edit" />
             <button type="submit" class="auth-button" id="save-changes-btn">Save Changes</button>
     </div>
         <!-- login -->
     <div class="edit-left">
             <textarea type="text" class="input" name="user-bio" placeholder="bio" id="bio-edit"></textarea>
             <div class="drop-down">
-            <img src="/assets/{{posts.[1].user.avatar}}" type="button" id="selectAv" class="avatar-icon selected">
+            <img src="/assets/{{posts.[0].user.avatar}}" type="button" id="selectAv" class="avatar-icon selected">
             </img>
             <div id="avatar-options" class="options">
             <img src="/assets/avatar1.png" id="avatar1.png" type="button"class="avatar-icon"></img>
