@@ -71,4 +71,4 @@ async function sendProfileInfo(avatarImg, id) {
         }
 }
 
-document.querySelector('#edit-post-btn').addEventListener('click', editPostHandler);
+document.querySelector('#edit-profile-btn').addEventListener('click', editPostHandler);

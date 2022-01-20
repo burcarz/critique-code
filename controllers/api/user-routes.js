@@ -70,7 +70,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/users create a new post
-router.post('/',withAuth, (req, res) => {
+router.post('/', (req, res) => {
    // TODO: will need to adjust
   User.create({
     username: req.body.username,

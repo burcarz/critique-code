@@ -31,11 +31,15 @@ async function btnClickHandler(event) {
 		container.classList.add("right-panel-active");
 	});
 
+    document.addEventListener('click', (e) => {
+        console.log(e.target);
+    })
+
     firstForm.addEventListener("submit", (e) => e.preventDefault());
 	secondForm.addEventListener("submit", (e) => e.preventDefault());
     console.log('clicked!');
     document.querySelector('#log-btn').addEventListener('click', loginFormHandler);
-    document.querySelector('#signup-btn').addEventListener('click', signupFormHandler);
+    document.querySelector('#unique-btn').addEventListener('submit', signupFormHandler);
 }
 // sign up form that POSTS new user data to /api/users
 async function signupFormHandler(event) {
@@ -45,6 +49,7 @@ async function signupFormHandler(event) {
     const email = document.querySelector('#email-signup').value.trim();
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector("#password-signup").value.trim();
+    const github = document.querySelector('#github-signup').value.trim();
     console.log(email);
     console.log(username);
     console.log(password);
@@ -54,7 +59,8 @@ async function signupFormHandler(event) {
             body: JSON.stringify({
                 username,
                 email,
-                password
+                password,
+                github
             }),
             headers: { 'Content-Type': 'application/json' }
         });
