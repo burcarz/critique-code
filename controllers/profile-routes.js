@@ -67,7 +67,7 @@ router.get('/:id', (req,res) => {
        const posts = dbPostData.map(post => post.get({ plain: true }));
   
        // Render dashboard with posts
-       res.render('public-profile', { posts, loggedIn: req.session.loggedIn });
+       res.render('public-profile', { posts });
    
      })
      .catch(err => {
