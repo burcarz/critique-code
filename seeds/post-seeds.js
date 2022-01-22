@@ -30,14 +30,6 @@ const postdata = [
   {
     title: 'Is this the proper way to style a checkbox? I feel I could be doing something better.',
     post_body: `
-    .checkbox-symbol {
-        position: absolute;
-        width: 0;
-        height: 0;
-        pointer-events: none;
-        user-select: none;
-    }
-    
     .checkbox-container {
         box-sizing: border-box;
         background: #ffffff;
@@ -71,16 +63,6 @@ const postdata = [
   {
     title: 'I come from a Java background, new to C# so I want to know if there is a better way of doing this :)',
     post_body: `
-    // Enter "vmethod [Tab]", then...  
-    public virtual void MyMethod()  {
-        throw new NotImplementedException();
-    }
-
-    // Enter "vmethod1 [Tab]", then...  
-    public virtual void MyMethod(object arg)  {
-        throw new NotImplementedException();
-    }
-
     // Enter "vmethod2 [Tab]", then...  
     public virtual void MyMethod(object arg1, object arg2)  {
         throw new NotImplementedException();
@@ -185,18 +167,6 @@ const postdata = [
         transform: scale(1);
         border: 1px solid #cccfdb;
         transition: all 0.3s ease;
-    }
-    
-    .checkbox span:first-child svg {
-        position: absolute;
-        top: 3px;
-        left: 2px;
-        fill: none;
-        stroke: #fff;
-        stroke-dasharray: 16px;
-        stroke-dashoffset: 16px;
-        transition: all 0.3s ease;
-        transform: translate3d(0, 0, 0);
     }`,
     vote_count: 3,
     user_id: 10,
@@ -221,16 +191,6 @@ const postdata = [
     
     // Enter "method1 [Tab]", then...  
     public void MyMethod(object arg)  {
-        throw new NotImplementedException();
-    }
-    
-    // Enter "method2 [Tab]", then...  
-    public void MyMethod(object arg1, object arg2)  {
-        throw new NotImplementedException();
-    }
-    
-    // Enter "method3 [Tab]", then...  
-    public void MyMethod(object arg1, object arg2, object arg3)  {
         throw new NotImplementedException();
     }`,
     vote_count: 32,
@@ -346,13 +306,7 @@ const postdata = [
     public void MyMethod();
     
     // Enter "imethod1 [Tab]", then...  
-    public void MyMethod(object arg);
-    
-    // Enter "imethod2 [Tab]", then...  
-    public void MyMethod(object arg1, object arg2);
-    
-    // Enter "imethod3 [Tab]", then...  
-    public void MyMethod(object arg1, object arg2, object arg3);`,
+    public void MyMethod(object arg);`,
     vote_count: 2,
     user_id: 2,
     tag_genre: 'Advice',
