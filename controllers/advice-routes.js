@@ -50,7 +50,7 @@ router.get('/', (req,res) => {
           // serialize data before passing to template
           const posts = dbPostData.map(post => post.get({ plain: true }));
 
-          res.render('advice', { posts, loggedIn: true });
+          res.render('advice', { posts, loggedIn: req.session.loggedIn });
   
         })
         .catch(err => {
