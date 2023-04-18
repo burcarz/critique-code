@@ -20,7 +20,7 @@ const hbs = exphbs.create({ helpers })
 
 // Setup express
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 15160 || 3001;
 
 // Setup sessions/and session-sequelize
 const session = require('express-session');
